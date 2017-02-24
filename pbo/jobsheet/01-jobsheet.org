@@ -1,9 +1,8 @@
 #+TITLE: Jobsheet 01
+#+SUBTITLE: Greenfoot
 #+AUTHOR: Dian Hanifudin Subhi
 #+EMAIL: dhanifudin@gmail.com
 #+LANGUAGE: id
-#+SELECT_TAGS: export
-#+EXCLUDE_TAGS: noexport
 
 #+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
 #+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
@@ -16,79 +15,149 @@
 #+HTML_MATHJAX:
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
 #+HTML_HEAD_EXTRA:
-#+SUBTITLE: Greenfoot
 #+INFOJS_OPT:
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
 #+LATEX_HEADER:
 
-* Ikhtisar
-#+CAPTION: Greenfoot
-#+NAME: fig:logo
-[[./images/01/logo.png]]
+* Kompetensi
+Setelah menempuh pokok bahasan ini, mahasiswa mampu:
 
-Greenfoot adalah aplikasi visual dan interaktif yang menggunakan java untuk
-membangun game, simulasi atau program grafis lainnya. Bahasa java berorientasi
-obyek, sebuah paradigma pemrograman yang merepresentasikan konsep ke dalam
-obyek-obyek. Obyek mempunyai atribut-atribut yang menyimpan data serta berhubungan
-dengan proses yang direpresentasikan sebagai method. Dalam pemrograman
-berorientasi obyek dapat dianggap sebagai kumpulan obyek-obyek yang berinteraksi.
-* Kebutuhan Sistem
-Greenfoot dibangun dengan menggunakan bahasa pemrograman Java, sehingga untuk
-menjalankan aplikasi ini sistem operasi yang digunakan sudah terinstall JDK
-(Java Development Kit). Installer JDK dapat diunduh pada link [[http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html][ini]]. Unduh
-installer kemudian klik ganda, ikuti langkah-langkah instalasi yang muncul.
-* Cara Instalasi
-Untuk menginstall aplikasi Greenfoot, buka alamat
-[[http://www.greenfoot.org/][http://www.greenfoot.org/]]. Pilih tautan *The Software*, kemudian sesuaikan
-sistem operasi yang digunakan. Unduh kemudian install aplikasi Greenfoot.
-* Antar Muka Greenfoot
-#+CAPTION: Antar muka aplikasi Greenfoot
-#+NAME: fig:ui
-[[./images/01/ui.png]]
+- Mengidentifikasi obyek-obyek yang akan terlibat dalam scenario di Greenfoot.
 
-Antar muka Greenfoot terbagi menjadi 3 bagian utama. World, Classes dan
-Execution Controls.
-- World: Tempat dimana obyek-obyek akan diletakkan dan tempat dimana skenario
-  berjalan.
-- Classes: Bagian yang memperlihatkan daftar class yang terlibat dalam skenario.
-- Execution Controls: Tempat kontrol eksekusi jalannya program.
+- Membuat scenario sederhana (menggerakkan, membelokkan dan mendeteksi
+  interseksi obyek) menggunakan Greenfoot.
 
-* Cara Menggunakan
-** Membuat Scenario
-- Pilih menu scenario kemudian pilih *New Java Scenario*
-[[./images/01/step-01.png]]
-** Membuat Template World
-- Klik kanan pada class *World* -> *New Subclass*
-[[./images/01/step-02.png]]
-- Lengkapi pengaturannya
-[[./images/01/step-03.png]]
-- Setelah selesai dibuat, maka template World yang baru akan muncul.
-[[./images/01/step-04.png]]
-- Akan tetapi template ini belum muncul di tampilan karena perlu dilakukan
-  instansiasi terlebih dahulu.
-** Menginstansiasi World
-- Template world yang sudah dibuat sebelumnya, harus diinstansiasi terlebih
-dahulu untuk memulai menggunakannya.
-- Klik kanan pada class *HamparanPasir* -> *new HamparanPasir()*
-[[./images/01/step-05.png]]
-- Setelah itu, dunia HamparanPasir akan terbentuk.
-** Membuat Template Actor
-- Klik kanan pada class *Actor* -> *New Subclass*
-[[./images/01/step-06.png]]
-- Lengkapi properti yang harus diisi.
-[[./images/01/step-07.png]]
-** Menginstansiasi Actor
-- Seperti halnya world HamparanPasir yang harus diinstansiasi dulu agar bisa
-  tampil/digunakan, demikian juga halnya dengan Lalat.
-[[./images/01/step-08.png]]
-- Lalu drag obyek Lalat ke dalam world.
-[[./images/01/step-09.png]]
-** Menyimpan World
-- Untuk menyimpan, klik kanan pada area world kemudian pilih menu *Save the world*
-[[./images/01/step-10.png]]
-** Menyesuaikan Kode
-- Untuk menambahkan kode pada aktor, klik kanan pada obyek Lalat kemudian pilih
-  menu *Open editor*
-[[./images/01/step-11.png]]
-- Tambahkan kode di bawah ini
-[[./images/01/step-12.png]]
+- Memahami konsep/paradigma pemrograman berorientasi obyek melalui pengalaman
+  membuat scenario di greenfoot.
+
+* Pendahuluan
+Greenfoot dikembangkan oleh Programming Education Tools Group yang ada di School
+of Computing, Kent University, UK. Greenfoot merupakan framework untuk membuat
+aplikasi grafis 2 dimensi yang interaktif. Greenfoot meng-handle suatu aplikasi
+dalam bentuk skenario, dimana di dalam skenario tersebut akan ada objek- objek
+yang saling berinteraksi. Misalkan pada skenario Greenfoot pada game Wombat di
+bawah ini:
+
+[[./images/01/01.png]]
+
+Terdapat 3 objek Aktor, yaitu Wombat, Batu dan Daun. Ketika objek actor tersebut
+berada di dalam WonbatWorld. Antara objek yang satu dengan objek yang lain yang
+ada di dalam WombatWorld saling berinteraksi. Wombat jika menemui Batu, maka ia
+akan belok, dan jika Wombat bertemu Daun maka Daun tersebut akan hilang/termakan
+Wombat.
+
+Ketika hendak membuat skenario di dalam Greenfoot, mahasiswa akan dipaksa untuk
+mengidentifikasi objek-objek apa yang akan ada di dalam skenario. Setelah itu
+dilanjutkan dengan mengidentifikasi perilaku/behavior apa yang akan dilakukan
+oleh tiap objek, dan data/property apa saja yang dimiliki oleh tiap objek. Misal
+objek Wombat bisa memakan dan bisa berjalan (behaviour), serta memiliki
+kecepatan dan jumlah daun yang sudah dimakan (data/properti). Konsep berfikir
+tersebut yang melandasi paradigma pemrograman berorientasi objek. Paradigma
+Pemrograman Berorientasi Objek memandang suatu sistem terdiri atas objek-objek
+yang saling berinteraksi di dalamnya, dan tiap objek memiliki karakteristik
+(perilaku dan data/property/atribut) masing-masing.
+
+Secara garis besar, langkah-langkah dalam membuat aplikasi di Greenfoot antara lain:
+- Definisikan skenario yang akan dibuat
+- Definisikan objek-objek apa yang akan ada di dalam skenario
+- Buat cetakan/template dari tiap objek. Template dari world dengan cara membuat
+  turunan dari class World. Sedangkan template actor dibuat dengan membuat
+  turunan dari class Actor.
+- Buat objek nyata (lakukan instansiasi) dari template yang sudah dibuat, dan
+  masukkan ke dalam world.
+- Sesuaikan program dari tiap actor sehingga ia bisa berperilaku sesuai dengan
+yang diinginkan
+
+* Percobaan
+** Instalasi Greenfoot
+Greenfoot menyediakan paket instalasi pada berbagai platform sistem
+operasi. Sehingga Greenfoot memiliki dukungan yang tinggi dalam penggunaannya.
+
+1. Download installer Greenfoot di [[http://www.greenfoot.org/download][http://www.greenfoot.org/download]]. Pilih
+   paket installasi yang sesuai dengan platform sistem operasi yang digunakan.
+2. Pada sistem operasi Windows, setelah proses download installer selesai, untuk
+   memulai instalasi bisa dilakukan dengan double-click pada file installer.
+3. Proses instalasi bisa dilakukan dengan menekan tombol next, hingga proses
+   instalasi selesai.
+** Membuat Skenario Sederhana
+Skenario yang dibuat dalam percobaan ini adalah sebagai berikut: (1) terdapat
+objek ular dan katak yang ada di dalam world (2) pergerakan ular bisa dikontrol
+dengan keyboard, tombol kiri untuk belok kiri, tombol kanan untuk belok kanan,
+tombol atas untuk gerak maju dan tombol bawah untuk gerak mundur. (3) katak diam
+saja (4) jika katak bertemu ular, maka katak akan hilang dan akan muncul satu
+lagi katak dalam posisi yang random.
+
+- Buat skenario baru, pilih *Scenario* -> *New Java Scenario*
+
+[[./images/01/02.png]]
+
+- Buat class HamparanPasir, yang merupakan turunan/subclass dari class
+   World. Klik kanan class *World* -> *New subclass*
+
+[[./images/01/03.png]]
+
+- Kemudian lengkapi pengaturannya.
+
+[[./images/01/04.png]]
+
+- Jika tampilan world yang baru dibuat tadi belum muncul, maka selanjutnya
+  dilakukan proses instansiasi. Instansiasi ditujukan untuk membuat objek nyata
+  dari class yang sudah dibuat tadi. Kenapa peru dilakukan instansiasi? Karena
+  pada dasarnya class masih berupa template/rancangan, sehingga perlu
+  direalisasikan ke dalam objek nyata dulu sebelum ia bisa digunakan.
+
+- Klik kanan class *HamparanPasir* > *new HamparanPasir()*
+
+[[./images/01/05.png]]
+
+- Dengan cara yang hampir sama dengan langkah-langkah di atas, selanjutnya
+  dibuat class actor ular dan katak.
+
+- Klik kanan class Actor > New sublass
+
+[[./images/01/06.png]]
+
+- Kemudian, lengkapi pengaturannya. Berikan nama Ular pada nama class dan pilih
+  gambar ular.
+
+[[./images/01/07.png]]
+
+- Buat objek Katak dan Ular, dan masukan masing-masing ke dalam world
+HamparanPasir.
+- Klik kanan class Ular > new Ular() kemudian taruh ke dalam world
+
+[[./images/01/08.png]]
+
+- Lakukan hal yang sama untuk membuat objek dari *Katak*.
+[[./images/01/09.png]]
+
+- Untuk menyimpan semua yang telah ditambahkan ke world, klik kanan pada objek
+  world > Save the world
+
+[[./images/01/10.png]]
+
+- Berikan kode program untuk mengontrol gerak pada class Ular. Klik kanan class
+Ular > Open editor. Buat fungsi eat() dan tambahkan sintaks program di dalam
+fungsi act().
+
+[[./images/01/11.png]]
+
+- Simpan scenario
+- Jalankan menggunakan tombol control *Run*
+
+* Pertanyaan
+1. Jelaskan apa yang harus dilakukan sebelum membuat scenario/aplikasi di Greenfoot!
+2. Pada saat membuat world maupun actor, yang dilakukan pertama kali adalah
+   membuat subclass dari class world/actor. Berikan penjelasan tentang subclass!
+3. Setelah dibuat class Katak/Ular, ketika hendak menempatkannya atau
+   menggunakannya di dalam world, maka perlu dilakukan instansiasi (pembuatan
+   objek). Berikan penjelasan tentang hubungan antara class dan object!
+4. Dengan memperhatikan sintaks program class Ular yang ditunjukan pada langkah
+   7 Percobaan 2 di atas, apa saja yang ada di dalam suatu class?
+5. Perhatikan kembali class Ular yang ditunjukan pada langkah 7 Percobaan 2 di
+   atas, pada baris 25, apa yang dilakukan pada sintaks tersebut?
+* Tugas
+#+HTML: <div class="notice notice-info">
+Buatlah scenario permainan sederhana yang baru menggunakan Greenfoot. Scenario
+yang dibuat usahakan berbeda dengan yang sudah dibuat pada jobsheet ini. Dan
+minimal terdapat 2 aktor yang terlibat di dalamnya.

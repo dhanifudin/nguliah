@@ -1,0 +1,94 @@
+#+TITLE: Pertemuan 01
+#+AUTHOR: Dian Hanifudin Subhi
+#+EMAIL: dhanifudin@gmail.com
+#+LANGUAGE: id
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+#+HTML_HEAD_EXTRA:
+#+SUBTITLE: Greenfoot
+#+INFOJS_OPT:
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
+#+LATEX_HEADER:
+
+* Ikhtisar
+#+CAPTION: Greenfoot
+#+NAME: fig:logo
+[[./images/01/logo.png]]
+
+Greenfoot adalah aplikasi visual dan interaktif yang menggunakan java untuk
+membangun game, simulasi atau program grafis lainnya. Bahasa java berorientasi
+obyek, sebuah paradigma pemrograman yang merepresentasikan konsep ke dalam
+obyek-obyek. Obyek mempunyai atribut-atribut yang menyimpan data serta berhubungan
+dengan proses yang direpresentasikan sebagai method. Dalam pemrograman
+berorientasi obyek dapat dianggap sebagai kumpulan obyek-obyek yang berinteraksi.
+* Kebutuhan Sistem
+Greenfoot dibangun dengan menggunakan bahasa pemrograman Java, sehingga untuk
+menjalankan aplikasi ini sistem operasi yang digunakan sudah terinstall JDK
+(Java Development Kit). Installer JDK dapat diunduh pada link [[http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html][ini]]. Unduh
+installer kemudian klik ganda, ikuti langkah-langkah instalasi yang muncul.
+* Cara Instalasi
+Untuk menginstall aplikasi Greenfoot, buka alamat
+[[http://www.greenfoot.org/][http://www.greenfoot.org/]]. Pilih tautan *The Software*, kemudian sesuaikan
+sistem operasi yang digunakan. Unduh kemudian install aplikasi Greenfoot.
+* Antar Muka Greenfoot
+#+CAPTION: Antar muka aplikasi Greenfoot
+#+NAME: fig:ui
+[[./images/01/ui.png]]
+
+Antar muka Greenfoot terbagi menjadi 3 bagian utama. World, Classes dan
+Execution Controls.
+- World: Tempat dimana obyek-obyek akan diletakkan dan tempat dimana skenario
+  berjalan.
+- Classes: Bagian yang memperlihatkan daftar class yang terlibat dalam skenario.
+- Execution Controls: Tempat kontrol eksekusi jalannya program.
+
+* Cara Menggunakan
+** Membuat Scenario
+- Pilih menu scenario kemudian pilih *New Java Scenario*
+[[./images/01/step-01.png]]
+** Membuat Template World
+- Klik kanan pada class *World* -> *New Subclass*
+[[./images/01/step-02.png]]
+- Lengkapi pengaturannya
+[[./images/01/step-03.png]]
+- Setelah selesai dibuat, maka template World yang baru akan muncul.
+[[./images/01/step-04.png]]
+- Akan tetapi template ini belum muncul di tampilan karena perlu dilakukan
+  instansiasi terlebih dahulu.
+** Menginstansiasi World
+- Template world yang sudah dibuat sebelumnya, harus diinstansiasi terlebih
+dahulu untuk memulai menggunakannya.
+- Klik kanan pada class *HamparanPasir* -> *new HamparanPasir()*
+[[./images/01/step-05.png]]
+- Setelah itu, dunia HamparanPasir akan terbentuk.
+** Membuat Template Actor
+- Klik kanan pada class *Actor* -> *New Subclass*
+[[./images/01/step-06.png]]
+- Lengkapi properti yang harus diisi.
+[[./images/01/step-07.png]]
+** Menginstansiasi Actor
+- Seperti halnya world HamparanPasir yang harus diinstansiasi dulu agar bisa
+  tampil/digunakan, demikian juga halnya dengan Lalat.
+[[./images/01/step-08.png]]
+- Lalu drag obyek Lalat ke dalam world.
+[[./images/01/step-09.png]]
+** Menyimpan World
+- Untuk menyimpan, klik kanan pada area world kemudian pilih menu *Save the world*
+[[./images/01/step-10.png]]
+** Menyesuaikan Kode
+- Untuk menambahkan kode pada aktor, klik kanan pada obyek Lalat kemudian pilih
+  menu *Open editor*
+[[./images/01/step-11.png]]
+- Tambahkan kode di bawah ini
+[[./images/01/step-12.png]]

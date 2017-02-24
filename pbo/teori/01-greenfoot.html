@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id">
 <head>
-<!-- 2017-02-24 Fri 10:50 -->
+<!-- 2017-02-24 Fri 10:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jobsheet 01</title>
+<title>Pertemuan 01</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Dian Hanifudin Subhi" />
 <style type="text/css">
@@ -229,7 +229,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Jobsheet 01
+<h1 class="title">Pertemuan 01
 <br>
 <span class="subtitle">Greenfoot</span>
 </h1>
@@ -237,285 +237,237 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org02bdb94">1. Kompetensi</a></li>
-<li><a href="#org021f2dd">2. Pendahuluan</a></li>
-<li><a href="#org6e9475a">3. Percobaan</a>
+<li><a href="#org6fe0c0b">1. Ikhtisar</a></li>
+<li><a href="#org4bf51ac">2. Kebutuhan Sistem</a></li>
+<li><a href="#org58b84fd">3. Cara Instalasi</a></li>
+<li><a href="#org5904bf3">4. Antar Muka Greenfoot</a></li>
+<li><a href="#org29e2692">5. Cara Menggunakan</a>
 <ul>
-<li><a href="#orgf71fa20">3.1. Instalasi Greenfoot</a></li>
-<li><a href="#org62dd582">3.2. Membuat Skenario Sederhana</a></li>
+<li><a href="#org54cc1ca">5.1. Membuat Scenario</a></li>
+<li><a href="#org267b04d">5.2. Membuat Template World</a></li>
+<li><a href="#org229aed7">5.3. Menginstansiasi World</a></li>
+<li><a href="#org34f99ef">5.4. Membuat Template Actor</a></li>
+<li><a href="#org0e5788f">5.5. Menginstansiasi Actor</a></li>
+<li><a href="#org9fa3283">5.6. Menyimpan World</a></li>
+<li><a href="#org330cdd8">5.7. Menyesuaikan Kode</a></li>
 </ul>
 </li>
-<li><a href="#orgfdb993f">4. Pertanyaan</a></li>
-<li><a href="#orge069f40">5. Tugas</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org02bdb94" class="outline-2">
-<h2 id="org02bdb94"><span class="section-number-2">1</span> Kompetensi</h2>
+<div id="outline-container-org6fe0c0b" class="outline-2">
+<h2 id="org6fe0c0b"><span class="section-number-2">1</span> Ikhtisar</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-Setelah menempuh pokok bahasan ini, mahasiswa mampu:
+
+<div id="orgefc1d97" class="figure">
+<p><img src="./images/01/logo.png" alt="logo.png" />
 </p>
-
-<ul class="org-ul">
-<li>Mengidentifikasi obyek-obyek yang akan terlibat dalam scenario di Greenfoot.</li>
-
-<li>Membuat scenario sederhana (menggerakkan, membelokkan dan mendeteksi
-interseksi obyek) menggunakan Greenfoot.</li>
-
-<li>Memahami konsep/paradigma pemrograman berorientasi obyek melalui pengalaman
-membuat scenario di greenfoot.</li>
-</ul>
-</div>
+<p><span class="figure-number">Figure 1: </span>Greenfoot</p>
 </div>
 
-<div id="outline-container-org021f2dd" class="outline-2">
-<h2 id="org021f2dd"><span class="section-number-2">2</span> Pendahuluan</h2>
+<p>
+Greenfoot adalah aplikasi visual dan interaktif yang menggunakan java untuk
+membangun game, simulasi atau program grafis lainnya. Bahasa java berorientasi
+obyek, sebuah paradigma pemrograman yang merepresentasikan konsep ke dalam
+obyek-obyek. Obyek mempunyai atribut-atribut yang menyimpan data serta berhubungan
+dengan proses yang direpresentasikan sebagai method. Dalam pemrograman
+berorientasi obyek dapat dianggap sebagai kumpulan obyek-obyek yang berinteraksi.
+</p>
+</div>
+</div>
+<div id="outline-container-org4bf51ac" class="outline-2">
+<h2 id="org4bf51ac"><span class="section-number-2">2</span> Kebutuhan Sistem</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Greenfoot dikembangkan oleh Programming Education Tools Group yang ada di School
-of Computing, Kent University, UK. Greenfoot merupakan framework untuk membuat
-aplikasi grafis 2 dimensi yang interaktif. Greenfoot meng-handle suatu aplikasi
-dalam bentuk skenario, dimana di dalam skenario tersebut akan ada objek- objek
-yang saling berinteraksi. Misalkan pada skenario Greenfoot pada game Wombat di
-bawah ini:
-</p>
-
-
-<div class="figure">
-<p><img src="./images/01/01.png" alt="01.png" />
-</p>
-</div>
-
-<p>
-Terdapat 3 objek Aktor, yaitu Wombat, Batu dan Daun. Ketika objek actor tersebut
-berada di dalam WonbatWorld. Antara objek yang satu dengan objek yang lain yang
-ada di dalam WombatWorld saling berinteraksi. Wombat jika menemui Batu, maka ia
-akan belok, dan jika Wombat bertemu Daun maka Daun tersebut akan hilang/termakan
-Wombat.
-</p>
-
-<p>
-Ketika hendak membuat skenario di dalam Greenfoot, mahasiswa akan dipaksa untuk
-mengidentifikasi objek-objek apa yang akan ada di dalam skenario. Setelah itu
-dilanjutkan dengan mengidentifikasi perilaku/behavior apa yang akan dilakukan
-oleh tiap objek, dan data/property apa saja yang dimiliki oleh tiap objek. Misal
-objek Wombat bisa memakan dan bisa berjalan (behaviour), serta memiliki
-kecepatan dan jumlah daun yang sudah dimakan (data/properti). Konsep berfikir
-tersebut yang melandasi paradigma pemrograman berorientasi objek. Paradigma
-Pemrograman Berorientasi Objek memandang suatu sistem terdiri atas objek-objek
-yang saling berinteraksi di dalamnya, dan tiap objek memiliki karakteristik
-(perilaku dan data/property/atribut) masing-masing.
-</p>
-
-<p>
-Secara garis besar, langkah-langkah dalam membuat aplikasi di Greenfoot antara lain:
-</p>
-<ul class="org-ul">
-<li>Definisikan skenario yang akan dibuat</li>
-<li>Definisikan objek-objek apa yang akan ada di dalam skenario</li>
-<li>Buat cetakan/template dari tiap objek. Template dari world dengan cara membuat
-turunan dari class World. Sedangkan template actor dibuat dengan membuat
-turunan dari class Actor.</li>
-<li>Buat objek nyata (lakukan instansiasi) dari template yang sudah dibuat, dan
-masukkan ke dalam world.</li>
-<li>Sesuaikan program dari tiap actor sehingga ia bisa berperilaku sesuai dengan</li>
-</ul>
-<p>
-yang diinginkan
+Greenfoot dibangun dengan menggunakan bahasa pemrograman Java, sehingga untuk
+menjalankan aplikasi ini sistem operasi yang digunakan sudah terinstall JDK
+(Java Development Kit). Installer JDK dapat diunduh pada link <a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html">ini</a>. Unduh
+installer kemudian klik ganda, ikuti langkah-langkah instalasi yang muncul.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org6e9475a" class="outline-2">
-<h2 id="org6e9475a"><span class="section-number-2">3</span> Percobaan</h2>
+<div id="outline-container-org58b84fd" class="outline-2">
+<h2 id="org58b84fd"><span class="section-number-2">3</span> Cara Instalasi</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgf71fa20" class="outline-3">
-<h3 id="orgf71fa20"><span class="section-number-3">3.1</span> Instalasi Greenfoot</h3>
-<div class="outline-text-3" id="text-3-1">
 <p>
-Greenfoot menyediakan paket instalasi pada berbagai platform sistem
-operasi. Sehingga Greenfoot memiliki dukungan yang tinggi dalam penggunaannya.
-</p>
-
-<ol class="org-ol">
-<li>Download installer Greenfoot di <a href="http://www.greenfoot.org/download"><a href="http://www.greenfoot.org/download">http://www.greenfoot.org/download</a></a>. Pilih
-paket installasi yang sesuai dengan platform sistem operasi yang digunakan.</li>
-<li>Pada sistem operasi Windows, setelah proses download installer selesai, untuk
-memulai instalasi bisa dilakukan dengan double-click pada file installer.</li>
-<li>Proses instalasi bisa dilakukan dengan menekan tombol next, hingga proses
-instalasi selesai.</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org62dd582" class="outline-3">
-<h3 id="org62dd582"><span class="section-number-3">3.2</span> Membuat Skenario Sederhana</h3>
-<div class="outline-text-3" id="text-3-2">
-<p>
-Skenario yang dibuat dalam percobaan ini adalah sebagai berikut: (1) terdapat
-objek ular dan katak yang ada di dalam world (2) pergerakan ular bisa dikontrol
-dengan keyboard, tombol kiri untuk belok kiri, tombol kanan untuk belok kanan,
-tombol atas untuk gerak maju dan tombol bawah untuk gerak mundur. (3) katak diam
-saja (4) jika katak bertemu ular, maka katak akan hilang dan akan muncul satu
-lagi katak dalam posisi yang random.
-</p>
-
-<ul class="org-ul">
-<li>Buat skenario baru, pilih <b>Scenario</b> -&gt; <b>New Java Scenario</b></li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/02.png" alt="02.png" />
+Untuk menginstall aplikasi Greenfoot, buka alamat
+<a href="http://www.greenfoot.org/"><a href="http://www.greenfoot.org/">http://www.greenfoot.org/</a></a>. Pilih tautan <b>The Software</b>, kemudian sesuaikan
+sistem operasi yang digunakan. Unduh kemudian install aplikasi Greenfoot.
 </p>
 </div>
-
-<ul class="org-ul">
-<li>Buat class HamparanPasir, yang merupakan turunan/subclass dari class
-World. Klik kanan class <b>World</b> -&gt; <b>New subclass</b></li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/03.png" alt="03.png" />
-</p>
 </div>
-
-<ul class="org-ul">
-<li>Kemudian lengkapi pengaturannya.</li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/04.png" alt="04.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Jika tampilan world yang baru dibuat tadi belum muncul, maka selanjutnya
-dilakukan proses instansiasi. Instansiasi ditujukan untuk membuat objek nyata
-dari class yang sudah dibuat tadi. Kenapa peru dilakukan instansiasi? Karena
-pada dasarnya class masih berupa template/rancangan, sehingga perlu
-direalisasikan ke dalam objek nyata dulu sebelum ia bisa digunakan.</li>
-
-<li>Klik kanan class <b>HamparanPasir</b> &gt; <b>new HamparanPasir()</b></li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/05.png" alt="05.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Dengan cara yang hampir sama dengan langkah-langkah di atas, selanjutnya
-dibuat class actor ular dan katak.</li>
-
-<li>Klik kanan class Actor &gt; New sublass</li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/06.png" alt="06.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Kemudian, lengkapi pengaturannya. Berikan nama Ular pada nama class dan pilih
-gambar ular.</li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/07.png" alt="07.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Buat objek Katak dan Ular, dan masukan masing-masing ke dalam world</li>
-</ul>
-<p>
-HamparanPasir.
-</p>
-<ul class="org-ul">
-<li>Klik kanan class Ular &gt; new Ular() kemudian taruh ke dalam world</li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/08.png" alt="08.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Lakukan hal yang sama untuk membuat objek dari <b>Katak</b>.</li>
-</ul>
-
-<div class="figure">
-<p><img src="./images/01/09.png" alt="09.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Untuk menyimpan semua yang telah ditambahkan ke world, klik kanan pada objek
-world &gt; Save the world</li>
-</ul>
-
-
-<div class="figure">
-<p><img src="./images/01/10.png" alt="10.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Berikan kode program untuk mengontrol gerak pada class Ular. Klik kanan class</li>
-</ul>
-<p>
-Ular &gt; Open editor. Buat fungsi eat() dan tambahkan sintaks program di dalam
-fungsi act().
-</p>
-
-
-<div class="figure">
-<p><img src="./images/01/11.png" alt="11.png" />
-</p>
-</div>
-
-<ul class="org-ul">
-<li>Simpan scenario</li>
-<li>Jalankan menggunakan tombol control <b>Run</b></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgfdb993f" class="outline-2">
-<h2 id="orgfdb993f"><span class="section-number-2">4</span> Pertanyaan</h2>
+<div id="outline-container-org5904bf3" class="outline-2">
+<h2 id="org5904bf3"><span class="section-number-2">4</span> Antar Muka Greenfoot</h2>
 <div class="outline-text-2" id="text-4">
-<ol class="org-ol">
-<li>Jelaskan apa yang harus dilakukan sebelum membuat scenario/aplikasi di Greenfoot!</li>
-<li>Pada saat membuat world maupun actor, yang dilakukan pertama kali adalah
-membuat subclass dari class world/actor. Berikan penjelasan tentang subclass!</li>
-<li>Setelah dibuat class Katak/Ular, ketika hendak menempatkannya atau
-menggunakannya di dalam world, maka perlu dilakukan instansiasi (pembuatan
-objek). Berikan penjelasan tentang hubungan antara class dan object!</li>
-<li>Dengan memperhatikan sintaks program class Ular yang ditunjukan pada langkah
-7 Percobaan 2 di atas, apa saja yang ada di dalam suatu class?</li>
-<li>Perhatikan kembali class Ular yang ditunjukan pada langkah 7 Percobaan 2 di
-atas, pada baris 25, apa yang dilakukan pada sintaks tersebut?</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orge069f40" class="outline-2">
-<h2 id="orge069f40"><span class="section-number-2">5</span> Tugas</h2>
-<div class="outline-text-2" id="text-5">
-<div class="notice notice-info">
-<p>
-Buatlah scenario permainan sederhana yang baru menggunakan Greenfoot. Scenario
-yang dibuat usahakan berbeda dengan yang sudah dibuat pada jobsheet ini. Dan
-minimal terdapat 2 aktor yang terlibat di dalamnya.
+
+<div id="org540d754" class="figure">
+<p><img src="./images/01/ui.png" alt="ui.png" />
 </p>
+<p><span class="figure-number">Figure 2: </span>Antar muka aplikasi Greenfoot</p>
+</div>
+
+<p>
+Antar muka Greenfoot terbagi menjadi 3 bagian utama. World, Classes dan
+Execution Controls.
+</p>
+<ul class="org-ul">
+<li>World: Tempat dimana obyek-obyek akan diletakkan dan tempat dimana skenario
+berjalan.</li>
+<li>Classes: Bagian yang memperlihatkan daftar class yang terlibat dalam skenario.</li>
+<li>Execution Controls: Tempat kontrol eksekusi jalannya program.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org29e2692" class="outline-2">
+<h2 id="org29e2692"><span class="section-number-2">5</span> Cara Menggunakan</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-org54cc1ca" class="outline-3">
+<h3 id="org54cc1ca"><span class="section-number-3">5.1</span> Membuat Scenario</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Pilih menu scenario kemudian pilih <b>New Java Scenario</b></li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-01.png" alt="step-01.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org267b04d" class="outline-3">
+<h3 id="org267b04d"><span class="section-number-3">5.2</span> Membuat Template World</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Klik kanan pada class <b>World</b> -&gt; <b>New Subclass</b></li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-02.png" alt="step-02.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Lengkapi pengaturannya</li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-03.png" alt="step-03.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Setelah selesai dibuat, maka template World yang baru akan muncul.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-04.png" alt="step-04.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Akan tetapi template ini belum muncul di tampilan karena perlu dilakukan
+instansiasi terlebih dahulu.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org229aed7" class="outline-3">
+<h3 id="org229aed7"><span class="section-number-3">5.3</span> Menginstansiasi World</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Template world yang sudah dibuat sebelumnya, harus diinstansiasi terlebih</li>
+</ul>
+<p>
+dahulu untuk memulai menggunakannya.
+</p>
+<ul class="org-ul">
+<li>Klik kanan pada class <b>HamparanPasir</b> -&gt; <b>new HamparanPasir()</b></li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-05.png" alt="step-05.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Setelah itu, dunia HamparanPasir akan terbentuk.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org34f99ef" class="outline-3">
+<h3 id="org34f99ef"><span class="section-number-3">5.4</span> Membuat Template Actor</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>Klik kanan pada class <b>Actor</b> -&gt; <b>New Subclass</b></li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-06.png" alt="step-06.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Lengkapi properti yang harus diisi.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-07.png" alt="step-07.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0e5788f" class="outline-3">
+<h3 id="org0e5788f"><span class="section-number-3">5.5</span> Menginstansiasi Actor</h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>Seperti halnya world HamparanPasir yang harus diinstansiasi dulu agar bisa
+tampil/digunakan, demikian juga halnya dengan Lalat.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-08.png" alt="step-08.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Lalu drag obyek Lalat ke dalam world.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-09.png" alt="step-09.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9fa3283" class="outline-3">
+<h3 id="org9fa3283"><span class="section-number-3">5.6</span> Menyimpan World</h3>
+<div class="outline-text-3" id="text-5-6">
+<ul class="org-ul">
+<li>Untuk menyimpan, klik kanan pada area world kemudian pilih menu <b>Save the world</b></li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-10.png" alt="step-10.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org330cdd8" class="outline-3">
+<h3 id="org330cdd8"><span class="section-number-3">5.7</span> Menyesuaikan Kode</h3>
+<div class="outline-text-3" id="text-5-7">
+<ul class="org-ul">
+<li>Untuk menambahkan kode pada aktor, klik kanan pada obyek Lalat kemudian pilih
+menu <b>Open editor</b></li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-11.png" alt="step-11.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Tambahkan kode di bawah ini</li>
+</ul>
+
+<div class="figure">
+<p><img src="./images/01/step-12.png" alt="step-12.png" />
+</p>
+</div>
+</div>
 </div>
 </div>
 </div>
