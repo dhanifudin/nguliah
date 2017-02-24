@@ -1,4 +1,4 @@
-#+TITLE: Nguliah
+#+TITLE: Nguliah::Pemrograman Berorientasi Obyek
 #+AUTHOR: Dian Hanifudin Subhi
 #+EMAIL: dhanifudin@gmail.com
 #+LANGUAGE: id
@@ -14,15 +14,12 @@
 #+HTML_LINK_HOME:
 #+HTML_LINK_UP:
 #+HTML_MATHJAX:
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="assets/css/jobsheet.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
 #+HTML_HEAD_EXTRA:
-#+SUBTITLE: Materi Perkuliahan
+#+SUBTITLE: Materi Kuliah
 #+INFOJS_OPT:
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
 #+LATEX_HEADER:
 
-* Interaksi Manusia dan Komputer
-- [[./imk/index.html][Materi Kuliah]]
-* Pemrograman Berorientasi Obyek
-- [[./pbo/teori/index.html][Materi Kuliah]]
-- [[./pbo/jobsheet/index.html][Jobsheet]]
+* Pertemuan 01
+- [[./01-greenfoot.html][Greenfoot]]
