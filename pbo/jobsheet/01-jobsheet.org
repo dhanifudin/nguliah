@@ -22,13 +22,13 @@
 * Kompetensi
 Setelah menempuh pokok bahasan ini, mahasiswa mampu:
 
-- Mengidentifikasi obyek-obyek yang akan terlibat dalam scenario di Greenfoot.
+1. Mengidentifikasi obyek-obyek yang akan terlibat dalam scenario di Greenfoot.
 
-- Membuat scenario sederhana (menggerakkan, membelokkan dan mendeteksi
-  interseksi obyek) menggunakan Greenfoot.
+2. Membuat scenario sederhana (menggerakkan, membelokkan dan mendeteksi
+   interseksi obyek) menggunakan Greenfoot.
 
-- Memahami konsep/paradigma pemrograman berorientasi obyek melalui pengalaman
-  membuat scenario di greenfoot.
+3. Memahami konsep/paradigma pemrograman berorientasi obyek melalui pengalaman
+   membuat scenario di greenfoot.
 
 * Pendahuluan
 Greenfoot dikembangkan oleh Programming Education Tools Group yang ada di School

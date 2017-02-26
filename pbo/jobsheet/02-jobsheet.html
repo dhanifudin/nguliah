@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id">
 <head>
-<!-- 2017-02-26 Sun 09:21 -->
+<!-- 2017-02-26 Sun 22:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Jobsheet 02</title>
@@ -259,24 +259,176 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga3b6f0c">1. Percobaan</a>
+<li><a href="#org5063d2e">1. Kompetensi</a></li>
+<li><a href="#orgcc2b706">2. Pendahuluan</a>
 <ul>
-<li><a href="#org98a85a7">1.1. Instalasi JDK (Java Development Kit)</a></li>
-<li><a href="#orgfb5dfd3">1.2. Aplikasi Java Sederhana</a></li>
-<li><a href="#org55f0950">1.3. UML (Class Diagram) Sederhana</a></li>
+<li><a href="#orgde1a58e">2.1. Java</a></li>
+<li><a href="#orgf50e0eb">2.2. UML</a></li>
 </ul>
 </li>
-<li><a href="#orgd03fc76">2. Tugas</a></li>
+<li><a href="#org9cb5aaa">3. Percobaan</a>
+<ul>
+<li><a href="#org835196b">3.1. Instalasi JDK (Java Development Kit)</a></li>
+<li><a href="#org64b24ee">3.2. Aplikasi Java Sederhana</a></li>
+<li><a href="#orgb51486f">3.3. UML (Class Diagram) Sederhana</a></li>
+</ul>
+</li>
+<li><a href="#orga045e5b">4. Tugas</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga3b6f0c" class="outline-2">
-<h2 id="orga3b6f0c"><span class="section-number-2">1</span> Percobaan</h2>
+<div id="outline-container-org5063d2e" class="outline-2">
+<h2 id="org5063d2e"><span class="section-number-2">1</span> Kompetensi</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org98a85a7" class="outline-3">
-<h3 id="org98a85a7"><span class="section-number-3">1.1</span> Instalasi JDK (Java Development Kit)</h3>
-<div class="outline-text-3" id="text-1-1">
+<p>
+Setelah menempuh pokok bahasan ini, mahasiswa mampu:
+</p>
+
+<ol class="org-ol">
+<li>Mengenal dan memahami karakteristik, platform serta lingkungan pengembangan
+program Java.</li>
+<li>Memahami secara teknis tahapan pengembangan program di Java.</li>
+<li>Mengidentifikasi dan menggambarkan class ke dalam class diagram.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgcc2b706" class="outline-2">
+<h2 id="orgcc2b706"><span class="section-number-2">2</span> Pendahuluan</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgde1a58e" class="outline-3">
+<h3 id="orgde1a58e"><span class="section-number-3">2.1</span> Java</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Java merupakan salah satu bahasa pemrograman yang mendukung konsep OOP secara
+penuh. Pada awalnya Java dikembangkan oleh Sun Microsystem pada
+tahun 1995. Beberapa tokoh yang mengembangkan Java antara lain Patrick Naughton,
+Mike Sheridan, James Gosling dan Bill Joy. Mereka memulai pengembangan Java pada
+tahun 1991.
+</p>
+
+<p>
+Beberapa karakteristik Java diantaranya:
+</p>
+<ul class="org-ul">
+<li>Secara penuh menerapkan atau mendukung konsep OOP</li>
+<li>Mendukung teknologi jaringan terdistribusi</li>
+<li>Java bersifat sederhana karena menghilangkan konsep Pointer yang mmeungkinkan
+mengakses alamat memori secara langsung. Di Java juga tidak ada
+deconstructor. Proses penghapusan obyek yang sudah tidak lagi digunakan dalam
+program, akan dilakukan secara otomatis oleh GC (Garbage Collector).</li>
+<li>Mendukung beberapa proses yang bisa jalan secara parallel (multithreading)</li>
+<li><p>
+Java tidak tergantung pada suatu platform sistem operasi tertentu
+(multiplatform/platform independent). Sekali program Java dikembangkan, maka
+ia bisa dijalankan pada semua sistem operasi, selama di sistem operasi
+tersebut telah mendukung JVM. Konsep ini yang sering juga disebut <b>Write Once
+Run Anywhere</b> (WORA).
+</p>
+
+
+<div class="figure">
+<p><img src="images/02/platform-dependent.png" alt="platform-dependent.png" />
+</p>
+</div></li>
+</ul>
+
+<p>
+Pada platform dependent, untuk berkas kode akan dikompilasi oleh compiler yang
+ada pada sistem operasi masing-masing. Hasil proses kompilasi akan menghasilkan
+file executable yang hanya dapat dieksekusi oleh sistem operasi tersebut. Jika
+ingin menjalankan pada sistem operasi lain, maka perlu dilakukan kompilasi ulang.
+</p>
+
+
+<div class="figure">
+<p><img src="images/02/platform-independent.png" alt="platform-independent.png" />
+</p>
+</div>
+
+<p>
+Sedangkan pada platform independent (Java), proses kompilasi dilakukan hanya
+sekali. Proses kompilasi menghasilkan file java bytecode (.class) yang dapat
+dieksekusi pada semua platform (dengan syarat sudah terinstall JRE). Tidak perlu
+dilakukan kompilasi ulang untuk mengeksekusi pada sistem operasi yang berbeda.
+</p>
+
+<p>
+Java memiliki beberapa grup teknologi diantaranya:
+</p>
+<ul class="org-ul">
+<li><b>Java Standard Edition</b> (J2SE) untuk pengembangan aplikasi desktop.</li>
+<li><b>Java Enterprise Edition</b> (J2EE) untuk pengembangan aplikasi enterprise.</li>
+<li><b>Java Micro Edition</b> (J2ME) untuk pengembangan aplikasi mobile.</li>
+<li><b>Java Smartcard</b></li>
+</ul>
+
+<p>
+Alur pengembangan program Java ditunjukkan pada Gambar berikut:
+</p>
+
+
+<div class="figure">
+<p><img src="images/02/alur-java.png" alt="alur-java.png" />
+</p>
+</div>
+
+<p>
+Kode program Java pertama kali ditulis dalam file teks dengan ekstensi
+.java. Setelah itu file .java di-compile oleh Java Compiler. Dari hasil
+kompilasi ini diperoleh file .class yang berisi Java Bytecode. Java VM
+selanjutnya akan menerjemahkan file .class tersebut sehingga program tersebut
+bisa dijalankan. Java VM tersedia untuk berbagai macam sistem operasi. Oleh
+karena itu, file .class yang sama akan mampu dijalankan di berbagai sistem operasi.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf50e0eb" class="outline-3">
+<h3 id="orgf50e0eb"><span class="section-number-3">2.2</span> UML</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+UML (Unified Modelling Language) merupakan bahasa standar yang digunakan
+untuk menentukan, menggambarkan, membangun dan mendokumentasikan artefak dari
+sistem perangkat lunak. UML dibuat oleh Object Management Group dan rancangan
+spesifikasi UML 1.0 diusulkan pada tahun 1997. UML terdiri dari beberapa
+diagram, antara lain: Use Case Diagram, Activity Diagram, Sequence Diagram,
+Class Diagram, Component Diagram serta Deployment Diagram. Dalam pembahasan ini
+hanya difokuskan pada Class Diagram.
+</p>
+
+<p>
+Class diagram menggambarkan atribut-atribut dan operasi-operasi
+(method/behavior) suatu class pada sebuah sistem. Class diagram secara luas
+digunakan dalam pemodelan sistem berorientasi objek karena merupakan diagram UML
+yang dapat memetakan secara langsung dengan bahasa berorientasi objek.
+</p>
+
+
+<div class="figure">
+<p><img src="images/02/plantuml-mahasiswa.png" alt="plantuml-mahasiswa.png" />
+</p>
+</div>
+
+<p>
+Pada contoh class diagram sederhana di atas, terdapat class Mahasiswa yang
+mempunyai atribut-atribut <b>nim</b> dan <b>nama</b> serta mempunyai method
+<b>belajar()</b>. Atribut menyimpan sebuah informasi atau state. Sedangkan method
+menggambarkan tingkah laku dari sebuah class. Setiap atribut maupun method
+mempunyai visibility (access modifier), pembahasan mengenai hal ini lebih lanjut
+akan dijelaskan pada materi enkapsulasi.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9cb5aaa" class="outline-2">
+<h2 id="org9cb5aaa"><span class="section-number-2">3</span> Percobaan</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org835196b" class="outline-3">
+<h3 id="org835196b"><span class="section-number-3">3.1</span> Instalasi JDK (Java Development Kit)</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 <b>Prosedur Percobaan</b>
 </p>
@@ -297,8 +449,8 @@ Setting</b> &rarr; <b>Environment Variable</b>. Kemudian cari variable
 <b>PATH</b>. Jika belum ada, maka buat variable <b>PATH</b> tersebut.</li>
 <li>Jika variable <b>PATH</b> sudah ada, dan nilai dari variable tersebut sudah ada,
 maka jangan dihapus nilai sebelumnya. Cukup tambahkan <b>C:\Program
-Files\Java\jdk1.7.0<sub>45\bin</sub></b> (sebagai pemisah antar nilai digunakan karakter
-;). Lokasi nilai JDK yang ditambahkan sesuaikan folder dimana Java terinstall.</li>
+Files\Java\jdk&lt;version&gt;\bin</b> (sebagai pemisah antar nilai digunakan karakter
+<b>;</b>). Lokasi nilai JDK yang ditambahkan sesuaikan folder dimana Java terinstall.</li>
 
 <li>Buka Command Prompt dan ketikkan perintah <b>javac -version</b>. Jika perintah
 tersebut dikenali, maka lingkungan sistem operasi windows telah mendukung
@@ -319,9 +471,9 @@ istilah tersebut!</li>
 </div>
 </div>
 
-<div id="outline-container-orgfb5dfd3" class="outline-3">
-<h3 id="orgfb5dfd3"><span class="section-number-3">1.2</span> Aplikasi Java Sederhana</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org64b24ee" class="outline-3">
+<h3 id="org64b24ee"><span class="section-number-3">3.2</span> Aplikasi Java Sederhana</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 <b>Prosedur Percobaan</b>
 </p>
@@ -331,12 +483,12 @@ istilah tersebut!</li>
 terinstall di komputer anda!</li>
 <li>Buat file baru dengan nama <b>HelloWorld.java</b></li>
 <li><p>
-Kemudian tulisk kode program di bawah ini!
+Kemudian tuliskan kode program di bawah ini!
 </p>
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #0000FF;">class</span> <span style="color: #6434A3;">HelloWorld</span> {
-  <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">main</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">args</span>[]) {
-    System.out.println(<span style="color: #008000;">"Hello World!"</span>);
+<pre class="src src-java"><span style="color: #F0DFAF; font-weight: bold;">class</span> <span style="color: #7CB8BB;">HelloWorld</span> {
+  <span style="color: #F0DFAF; font-weight: bold;">public</span> <span style="color: #F0DFAF; font-weight: bold;">static</span> <span style="color: #7CB8BB;">void</span> <span style="color: #93E0E3;">main</span>(<span style="color: #7CB8BB;">String</span> <span style="color: #DFAF8F;">args</span>[]) {
+    System.out.println(<span style="color: #CC9393;">"Hello World!"</span>);
   }
 }
 </pre>
@@ -377,9 +529,9 @@ berdasarkan percobaan tersebut!</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org55f0950" class="outline-3">
-<h3 id="org55f0950"><span class="section-number-3">1.3</span> UML (Class Diagram) Sederhana</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-orgb51486f" class="outline-3">
+<h3 id="orgb51486f"><span class="section-number-3">3.3</span> UML (Class Diagram) Sederhana</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 Untuk membuat <b>Class Diagram</b> dapat menggunakan perangkat lunak yang khusus
 dirancang untuk membuat UML. Dalam percobaan ini digunakan perangkat lunak
@@ -438,7 +590,7 @@ kata menggunakan huruf besar (aturan seperti ini dikenal dengan istilah CamelCas
 
 
 <div class="figure">
-<p><img src="./images/02/class-mahasiswa.png" alt="class-mahasiswa.png" width="250px" />
+<p><img src="./images/02/class-mahasiswa.png" alt="class-mahasiswa.png" width="150px" />
 </p>
 </div>
 
@@ -595,41 +747,41 @@ gambarkan ke dalam <b>Class Diagram</b>!
 </div>
 </div>
 
-<div id="outline-container-orgd03fc76" class="outline-2">
-<h2 id="orgd03fc76"><span class="section-number-2">2</span> Tugas</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orga045e5b" class="outline-2">
+<h2 id="orga045e5b"><span class="section-number-2">4</span> Tugas</h2>
+<div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
 Modifikasi program di bawah ini, sehingga memunculkan nim serta nama anda!
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Mahasiswa</span> {
-  <span style="color: #0000FF;">private</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nim</span>;
-  <span style="color: #0000FF;">private</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nama</span>;
+<pre class="src src-java"><span style="color: #F0DFAF; font-weight: bold;">class</span> <span style="color: #7CB8BB;">Mahasiswa</span> {
+  <span style="color: #F0DFAF; font-weight: bold;">private</span> <span style="color: #7CB8BB;">String</span> <span style="color: #DFAF8F;">nim</span>;
+  <span style="color: #F0DFAF; font-weight: bold;">private</span> <span style="color: #7CB8BB;">String</span> <span style="color: #DFAF8F;">nama</span>;
 
-  <span style="color: #0000FF;">public</span> <span style="color: #006699;">Mahasiswa</span>() {
+  <span style="color: #F0DFAF; font-weight: bold;">public</span> <span style="color: #93E0E3;">Mahasiswa</span>() {
   }
 
-  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">setNim</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nim</span>) {
-    <span style="color: #0000FF;">this</span>.nim = nim;
+  <span style="color: #F0DFAF; font-weight: bold;">public</span> <span style="color: #7CB8BB;">void</span> <span style="color: #93E0E3;">setNim</span>(<span style="color: #7CB8BB;">String</span> <span style="color: #DFAF8F;">nim</span>) {
+    <span style="color: #F0DFAF; font-weight: bold;">this</span>.nim = nim;
   }
 
-  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">getNim</span>() {
-    <span style="color: #0000FF;">return</span> nim;
+  <span style="color: #F0DFAF; font-weight: bold;">public</span> <span style="color: #7CB8BB;">String</span> <span style="color: #93E0E3;">getNim</span>() {
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> nim;
   }
 
-  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">setNama</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nama</span>) {
-    <span style="color: #0000FF;">this</span>.nama = nama;
+  <span style="color: #F0DFAF; font-weight: bold;">public</span> <span style="color: #7CB8BB;">void</span> <span style="color: #93E0E3;">setNama</span>(<span style="color: #7CB8BB;">String</span> <span style="color: #DFAF8F;">nama</span>) {
+    <span style="color: #F0DFAF; font-weight: bold;">this</span>.nama = nama;
   }
 
-  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">getNama</span>() {
-    <span style="color: #0000FF;">return</span> nama;
+  <span style="color: #F0DFAF; font-weight: bold;">public</span> <span style="color: #7CB8BB;">String</span> <span style="color: #93E0E3;">getNama</span>() {
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> nama;
   }
 
-  <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">main</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">args</span>[]) {
-    <span style="color: #6434A3;">Mahasiswa</span> <span style="color: #BA36A5;">mahasiswa</span> = <span style="color: #0000FF;">new</span> <span style="color: #6434A3;">Mahasiswa</span>();
-    mahasiswa.setNim(<span style="color: #008000;">"1234567890"</span>);
+  <span style="color: #F0DFAF; font-weight: bold;">public</span> <span style="color: #F0DFAF; font-weight: bold;">static</span> <span style="color: #7CB8BB;">void</span> <span style="color: #93E0E3;">main</span>(<span style="color: #7CB8BB;">String</span> <span style="color: #DFAF8F;">args</span>[]) {
+    <span style="color: #7CB8BB;">Mahasiswa</span> <span style="color: #DFAF8F;">mahasiswa</span> = <span style="color: #F0DFAF; font-weight: bold;">new</span> <span style="color: #7CB8BB;">Mahasiswa</span>();
+    mahasiswa.setNim(<span style="color: #CC9393;">"1234567890"</span>);
     System.out.println(mahasiswa.getNim());
   }
 }

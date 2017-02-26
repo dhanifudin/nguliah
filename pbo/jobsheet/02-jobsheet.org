@@ -19,6 +19,183 @@
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
 #+LATEX_HEADER:
 
+* Kompetensi
+Setelah menempuh pokok bahasan ini, mahasiswa mampu:
+
+1. Mengenal dan memahami karakteristik, platform serta lingkungan pengembangan
+   program Java.
+2. Memahami secara teknis tahapan pengembangan program di Java.
+3. Mengidentifikasi dan menggambarkan class ke dalam class diagram.
+
+* Pendahuluan
+** Java
+Java merupakan salah satu bahasa pemrograman yang mendukung konsep OOP secara
+penuh. Pada awalnya Java dikembangkan oleh Sun Microsystem pada
+tahun 1995. Beberapa tokoh yang mengembangkan Java antara lain Patrick Naughton,
+Mike Sheridan, James Gosling dan Bill Joy. Mereka memulai pengembangan Java pada
+tahun 1991.
+
+Beberapa karakteristik Java diantaranya:
+- Secara penuh menerapkan atau mendukung konsep OOP
+- Mendukung teknologi jaringan terdistribusi
+- Java bersifat sederhana karena menghilangkan konsep Pointer yang mmeungkinkan
+  mengakses alamat memori secara langsung. Di Java juga tidak ada
+  deconstructor. Proses penghapusan obyek yang sudah tidak lagi digunakan dalam
+  program, akan dilakukan secara otomatis oleh GC (Garbage Collector).
+- Mendukung beberapa proses yang bisa jalan secara parallel (multithreading)
+- Java tidak tergantung pada suatu platform sistem operasi tertentu
+  (multiplatform/platform independent). Sekali program Java dikembangkan, maka
+  ia bisa dijalankan pada semua sistem operasi, selama di sistem operasi
+  tersebut telah mendukung JVM. Konsep ini yang sering juga disebut *Write Once
+  Run Anywhere* (WORA).
+
+ #+BEGIN_SRC ditaa :file images/02/platform-dependent.png
+                   Ilustrasi proses kompilasi platform dependent
+                   +------------+   +------------+   +------------+   +------------+
+                   |            |   |            |   |            |   |            |
+                   | Windows    |   | Windows    |   | Windows    |   | Windows    |
+             +---->| C Compiler |-->| Binary     |-->| Linker     |-->| Executable |
+             |     |            |   | {d}        |   |            |   |{d}         |
+             |     +------------+   +------------+   +------------+   +------------+
+             |
+ +------+    |     +------------+   +------------+   +------------+   +------------+
+ |      |    |     |            |   |            |   |            |   |            |
+ | C    |    |     | Linux      |   | Linux      |   | Linux      |   | Linux      |
+ | Code |----+---->| C Compiler |-->| Binary     |-->| Linker     |-->| Executable |
+ |   {d}|    |     |            |   | {d}        |   |            |   |{d}         |
+ +------+    |     +------------+   +------------+   +------------+   +------------+
+             |
+             |     +------------+   +------------+   +------------+   +------------+
+             |     |            |   |            |   |            |   |            |
+             |     | BSD        |   | BSD        |   | BSD        |   | BSD        |
+             +---->| C Compiler |-->| Binary     |-->| Linker     |-->| Executable |
+                   |            |   | {d}        |   |            |   |{d}         |
+                   +------------+   +------------+   +------------+   +------------+
+
+                   +------------+      +-------------+
+                   |            |      |             |
+                   | Windows    |      | Windows     |
+                   | Executable |----->| Workstation |
+                   | {d}        |      +-------------+
+                   +------------+      +-------------+
+
+                   +------------+      +-------------+
+                   |            |      |             |
+                   | Linux      |      | Linux       |
+                   | Executable |----->| Workstation |
+                   | {d}        |      +-------------+
+                   +------------+      +-------------+
+
+                   +------------+      +-------------+
+                   |            |      |             |
+                   | BSD        |      | BSD         |
+                   | Executable |----->| Workstation |
+                   | {d}        |      +-------------+
+                   +------------+      +-------------+
+ #+END_SRC
+
+Pada platform dependent, untuk berkas kode akan dikompilasi oleh compiler yang
+ada pada sistem operasi masing-masing. Hasil proses kompilasi akan menghasilkan
+file executable yang hanya dapat dieksekusi oleh sistem operasi tersebut. Jika
+ingin menjalankan pada sistem operasi lain, maka perlu dilakukan kompilasi ulang.
+
+ #+BEGIN_SRC ditaa :file images/02/platform-independent.png
+ Ilustrasi kompilasi pada platform independent
++--------------+   +--------------+   +---------------+
+| Java         |   | Java         |   | Java          |
+| Code         |-->| Compiler     |-->| Bytecode      |
+| (.java file) |   |              |   | (.class file) |
+| {d}          |   |              |   | {d}           |
++--------------+   +--------------+   +---------------+
+
+                                Windows Workstation
+                                +--------------+
+                                | Java         |
+                                | Runtime      |
+                     +--------->| Excecution   |
+                     |          | Runtime      |
+                     |          +--------------+
+                     |          +--------------+
+                     |
+                     |          Linux Workstation
++---------------+    |          +--------------+
+| Java          |    |          | Java         |
+| Code          |    |          | Runtime      |
+| (.class file) |----+--------->| Excecution   |
+| {d}           |    |          | Runtime      |
++---------------+    |          +--------------+
+                     |          +--------------+
+                     |
+                     |          BSD Workstation
+                     |          +--------------+
+                     |          | Java         |
+                     |          | Runtime      |
+                     +--------->| Excecution   |
+                                | Runtime      |
+                                +--------------+
+                                +--------------+
+ #+END_SRC
+
+Sedangkan pada platform independent (Java), proses kompilasi dilakukan hanya
+sekali. Proses kompilasi menghasilkan file java bytecode (.class) yang dapat
+dieksekusi pada semua platform (dengan syarat sudah terinstall JRE). Tidak perlu
+dilakukan kompilasi ulang untuk mengeksekusi pada sistem operasi yang berbeda.
+
+Java memiliki beberapa grup teknologi diantaranya:
+- *Java Standard Edition* (J2SE) untuk pengembangan aplikasi desktop.
+- *Java Enterprise Edition* (J2EE) untuk pengembangan aplikasi enterprise.
+- *Java Micro Edition* (J2ME) untuk pengembangan aplikasi mobile.
+- *Java Smartcard*
+
+Alur pengembangan program Java ditunjukkan pada Gambar berikut:
+
+#+BEGIN_SRC ditaa :file images/02/alur-java.png
++----------------+    +----------+    +-----------------+   +---------+   +---------+
+|                |    |          |    |                 |   |         |   |         |
+| MyProgram.java |--->| Compiler |--->| MyProgram.class |-->| Java VM |-->| Program |
+|            {d} |    |          |    |            {d}  |   |     {o} |   |         |
++----------------+    +----------+    +-----------------+   +---------+   +---------+
+#+END_SRC
+
+Kode program Java pertama kali ditulis dalam file teks dengan ekstensi
+.java. Setelah itu file .java di-compile oleh Java Compiler. Dari hasil
+kompilasi ini diperoleh file .class yang berisi Java Bytecode. Java VM
+selanjutnya akan menerjemahkan file .class tersebut sehingga program tersebut
+bisa dijalankan. Java VM tersedia untuk berbagai macam sistem operasi. Oleh
+karena itu, file .class yang sama akan mampu dijalankan di berbagai sistem operasi.
+
+** UML
+UML (Unified Modelling Language) merupakan bahasa standar yang digunakan
+untuk menentukan, menggambarkan, membangun dan mendokumentasikan artefak dari
+sistem perangkat lunak. UML dibuat oleh Object Management Group dan rancangan
+spesifikasi UML 1.0 diusulkan pada tahun 1997. UML terdiri dari beberapa
+diagram, antara lain: Use Case Diagram, Activity Diagram, Sequence Diagram,
+Class Diagram, Component Diagram serta Deployment Diagram. Dalam pembahasan ini
+hanya difokuskan pada Class Diagram.
+
+Class diagram menggambarkan atribut-atribut dan operasi-operasi
+(method/behavior) suatu class pada sebuah sistem. Class diagram secara luas
+digunakan dalam pemodelan sistem berorientasi objek karena merupakan diagram UML
+yang dapat memetakan secara langsung dengan bahasa berorientasi objek.
+
+#+BEGIN_SRC plantuml :file images/02/plantuml-mahasiswa.png
+@startuml
+skinparam classAttributeIconSize 0
+class Mahasiswa {
+  +nim:String
+  +nama:String
+  +belajar():void
+}
+@enduml
+#+END_SRC
+
+Pada contoh class diagram sederhana di atas, terdapat class Mahasiswa yang
+mempunyai atribut-atribut *nim* dan *nama* serta mempunyai method
+*belajar()*. Atribut menyimpan sebuah informasi atau state. Sedangkan method
+menggambarkan tingkah laku dari sebuah class. Setiap atribut maupun method
+mempunyai visibility (access modifier), pembahasan mengenai hal ini lebih lanjut
+akan dijelaskan pada materi enkapsulasi.
+
 * Percobaan
 ** Instalasi JDK (Java Development Kit)
 
@@ -39,8 +216,8 @@
   *PATH*. Jika belum ada, maka buat variable *PATH* tersebut.
 - Jika variable *PATH* sudah ada, dan nilai dari variable tersebut sudah ada,
   maka jangan dihapus nilai sebelumnya. Cukup tambahkan *C:\Program
-  Files\Java\jdk1.7.0_45\bin* (sebagai pemisah antar nilai digunakan karakter
-  ;). Lokasi nilai JDK yang ditambahkan sesuaikan folder dimana Java terinstall.
+  Files\Java\jdk<version>\bin* (sebagai pemisah antar nilai digunakan karakter
+  *;*). Lokasi nilai JDK yang ditambahkan sesuaikan folder dimana Java terinstall.
 
 - Buka Command Prompt dan ketikkan perintah *javac -version*. Jika perintah
   tersebut dikenali, maka lingkungan sistem operasi windows telah mendukung
@@ -61,7 +238,7 @@
 - Buka aplikasi text editor (Sublime, Notepad++, Atom atau Notepad) yang telah
   terinstall di komputer anda!
 - Buat file baru dengan nama *HelloWorld.java*
-- Kemudian tulisk kode program di bawah ini!
+- Kemudian tuliskan kode program di bawah ini!
   #+BEGIN_SRC java
   class HelloWorld {
     public static void main(String args[]) {
@@ -127,7 +304,7 @@ StarUML. Anda dapat menggunakan perangkat lunak lainnya.
   Nama class diawali dengan huruf kapital, jika lebih dari satu kata setiap awal
   kata menggunakan huruf besar (aturan seperti ini dikenal dengan istilah CamelCase).
 
-#+ATTR_HTML: :width 250px
+#+ATTR_HTML: :width 150px
 [[./images/02/class-mahasiswa.png]]
 
 - Kemudian drag class *Mahasiswa* ke dalam Main panel.
@@ -179,13 +356,14 @@ StarUML. Anda dapat menggunakan perangkat lunak lainnya.
 2. Buatlah *Class Diagram* dari class di bawah ini!
   #+BEGIN_SRC plantuml :file images/02/class.png
   @startuml
+  skinparam classAttributeIconSize 0
   class Bayi {
-    String nama
-    String jenisKelamin
-    int umur
-    void menangis()
-    void setUmur(int umur)
-    int getUmur()
+    -nama:String
+    -jenisKelamin:String
+    +umur:int
+    +menangis():void
+    +setUmur(int umur):void
+    +getUmur():int
   }
   @enduml
   #+END_SRC

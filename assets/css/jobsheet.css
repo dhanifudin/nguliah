@@ -160,7 +160,7 @@ div.notice:before {
   background: #fcc;
   color: #600;
 }
-.notice-tugas {
+.notice-info {
   background: #def;
   color: #069;
 }
@@ -171,7 +171,7 @@ div.notice:before {
 .notice-warning a {
   color: #600;
 }
-.notice-tugas a {
+.notice-info a {
   color: #069;
 }
 .notice-info a {
@@ -182,8 +182,8 @@ div.notice-warning:before {
   background: #c99;
   color: #fcc;
 }
-div.notice-tugas:before {
-  content: "TUGAS";
+div.notice-info:before {
+  content: "INFO";
   background: #abc;
   color: #def;
 }
@@ -197,13 +197,13 @@ pre {
   border: 0;
   box-shadow: none;
 }
-pre.tugas:before {
+pre.info:before {
   content: "Properties";
   display: block;
   border-bottom: 1px dotted;
   margin-bottom: 1em;
 }
-pre.tugas {
+pre.info {
   background: #fec;
   color: #666;
   font-size: 0.85em;
@@ -356,6 +356,9 @@ div.figure {
   }
 }
 @media print {
+  #table-of-contents {
+    display: none;
+  }
   body {
     color: black;
   }
@@ -364,7 +367,6 @@ div.figure {
   }
   h2,
   h3 {
-    page-break-before: always;
     margin-top: 0;
   }
   table {
