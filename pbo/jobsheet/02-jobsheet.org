@@ -1,0 +1,238 @@
+#+TITLE: Jobsheet 02
+#+SUBTITLE: Pengenalan Java
+#+AUTHOR: Dian Hanifudin Subhi
+#+EMAIL: dhanifudin@gmail.com
+#+LANGUAGE: id
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+#+HTML_HEAD_EXTRA:
+#+INFOJS_OPT:
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
+#+LATEX_HEADER:
+
+* Percobaan
+** Instalasi JDK (Java Development Kit)
+
+*Prosedur Percobaan*
+
+- Download installer Java Development Kit (JDK) pada alamat [[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html][ini]].
+- Pilih *Accept License Agreement* kemudian pilih JDK berdasarkan sistem operasi
+  yang digunakan. (Catatan: untuk sistem operasi berbasis UNIX, sebaiknya
+  cara instalasi menggunakan *package manager* yang tersedia, contoh: apt, yum
+  atau homebrew).
+- Setelah file installer selesai diunduh, kemudian jalankan serta ikuti
+  instruksi proses instalasinya.
+- Untuk langkah selanjutnya, hanya dikhususkan untuk sistem operasi
+  Windows. Pada Windows diperlukan setting *PATH* terlebih dahulu sehingga
+  perintah java dapat dikenali.
+- Buka *Control Panel* \rightarrow *System* \rightarrow *Advanced System
+  Setting* \rightarrow *Environment Variable*. Kemudian cari variable
+  *PATH*. Jika belum ada, maka buat variable *PATH* tersebut.
+- Jika variable *PATH* sudah ada, dan nilai dari variable tersebut sudah ada,
+  maka jangan dihapus nilai sebelumnya. Cukup tambahkan *C:\Program
+  Files\Java\jdk1.7.0_45\bin* (sebagai pemisah antar nilai digunakan karakter
+  ;). Lokasi nilai JDK yang ditambahkan sesuaikan folder dimana Java terinstall.
+
+- Buka Command Prompt dan ketikkan perintah *javac -version*. Jika perintah
+  tersebut dikenali, maka lingkungan sistem operasi windows telah mendukung
+  program java. Jika belum dikenali, ada kemungkinan kesalahan dalam memasukkan
+  lokasi direktori *bin* pada variable *PATH*.
+
+*Pertanyaan*
+1. Jelaskan apa kegunaan memasukkan lokasi folder bin dari Java ke dalam
+   variable *PATH*?
+2. Selain JDK, ada istilah JRE dan JVM. Jelaskan apa perbedaan dari ketiga
+   istilah tersebut!
+3. Jelaskan mengapa program Java bersifat Multiplatform?
+
+** Aplikasi Java Sederhana
+
+*Prosedur Percobaan*
+
+- Buka aplikasi text editor (Sublime, Notepad++, Atom atau Notepad) yang telah
+  terinstall di komputer anda!
+- Buat file baru dengan nama *HelloWorld.java*
+- Kemudian tulisk kode program di bawah ini!
+  #+BEGIN_SRC java
+  class HelloWorld {
+    public static void main(String args[]) {
+      System.out.println("Hello World!");
+    }
+  }
+  #+END_SRC
+- Simpan, kemudian buka aplikasi *Command Prompt* dan masuk ke lokasi folder
+  dimana file *HelloWorld.java* tersimpan.
+- Compile *HelloWorld.java* dengan perintah.
+  #+BEGIN_SRC sh
+  javac HelloWorld.java
+  #+END_SRC
+- Perhatikan hasil proses kompilasi, jika proses kompilasi berhasil akan muncul
+  file baru dengan nama *HelloWorld.class*
+- Untuk menjalankan program yang telah dikompilasi, masukkan perintah
+  #+BEGIN_SRC sh
+    java HelloWorld
+  #+END_SRC
+
+*Pertanyaan*
+
+1. Jelaskan apa kegunaan perintah *javac NamaFile.java*? Apa yang dihasilkan
+   dari perintah *javac* tersebut?
+2. Jelaskan apa kegunaan perintah *java NamaClass*?
+3. Apa kegunaan fungsi *main()* pada blok kode Java?
+4. Apa kegunaan kata kunci *class* dalam program Java?
+5. Apa kegunaan perintah *System.out.println()* dalam program Java?
+6. Ambil kesimpulan tentang bagaimana tahapan proses pembuatan program Java
+   berdasarkan percobaan tersebut!
+** UML (Class Diagram) Sederhana
+Untuk membuat *Class Diagram* dapat menggunakan perangkat lunak yang khusus
+dirancang untuk membuat UML. Dalam percobaan ini digunakan perangkat lunak
+StarUML. Anda dapat menggunakan perangkat lunak lainnya.
+
+*Prosedur Percobaan*
+
+- Unduh installer StarUML pada alamat [[http://staruml.io/download][http://staruml.io/download]].
+- Pilih installer sesuai dengan sistem operasi yang anda gunakan.
+- Setelah installer tersimpan, jalankan dan ikuti proses instalasi.
+- Tampilan utama StarUml terdiri dari beberapa panel
+  - *Main*: digunakan untuk meletakkan model sebuah diagram.
+  - *Working Diagram*: panel yang menampilkan semua daftar diagram.
+  - *Toolbox*: panel yang digunakan untuk menambahkan model serta relasi.
+  - *Model Explorer*: panel yang me-list semua model yang terlibat dalam diagram
+  - *Editors*: panel yang digunakan untuk mengatur *styles* serta *properties*
+    dari model.
+  - *Minimap*: panel yang menampilkan diagram dalam ukuran mini.
+
+#+ATTR_HTML: :width 80%
+[[./images/02/staruml-ui.png]]
+
+- Untuk menambahkan class baru, pada *Model Explorer* klik kanan *Model*
+  \rightarrow *Add* \rightarrow *Class* atau gunakan panel *Toolbox*
+
+#+ATTR_HTML: :width 250px
+[[./images/02/add-class.png]]
+
+- Ubah nama class menjadi *Mahasiswa* pada panel *Editors* \rightarrow
+  *Properties*.
+
+  #+HTML: <div class="notice notice-info">
+  Nama class diawali dengan huruf kapital, jika lebih dari satu kata setiap awal
+  kata menggunakan huruf besar (aturan seperti ini dikenal dengan istilah CamelCase).
+
+#+ATTR_HTML: :width 250px
+[[./images/02/class-mahasiswa.png]]
+
+- Kemudian drag class *Mahasiswa* ke dalam Main panel.
+
+[[./images/02/mahasiswa.png]]
+
+- Untuk menambahkan atribut, klik kanan pada model class *Add* \rightarrow
+  *Attribute*
+
+#+ATTR_HTML: :width 250px
+[[./images/02/add-attribute.png]]
+
+- Set nama atribut menjadi nim pada panel *Editors*
+
+  #+HTML: <div class="notice notice-info">
+  Untuk menambahkan tipe data anda dapat menggunakan *type* pada panel *Editors*
+  \rightarrow *Properties*
+
+#+ATTR_HTML: :width 250px
+[[./images/02/nim-property.png]]
+
+[[./images/02/nim-mahasiswa.png]]
+
+- Ulangi langkah menambahkan atribut untuk atribut nama.
+
+[[./images/02/nama-mahasiswa.png]]
+
+- Untuk menambahkan method pada class, klik kanan pada model class *Add*
+  \rightarrow *Operation* (pada StarUML method dinotasikan dengan *Operation*).
+
+#+ATTR_HTML: :width 250px
+[[./images/02/add-operation.png]]
+
+- Ubah nama method menjadi belajar pada panel *Editors*
+
+#+ATTR_HTML: :width 250px
+[[./images/02/belajar-property.png]]
+
+[[./images/02/belajar-mahasiswa.png]]
+
+- Untuk menyimpan menjadi gambar, gunakan menu *File* \rightarrow *Export Diagram As* \rightarrow *PNG*
+
+  #+HTML: <div class="notice notice-warning">
+  Jangan menggunakan *screenshoot* untuk menyimpan menjadi gambar.
+
+*Pertanyaan*
+
+1. Apa yang membedakan antara atribut dengan method?
+2. Buatlah *Class Diagram* dari class di bawah ini!
+  #+BEGIN_SRC plantuml :file images/02/class.png
+  @startuml
+  class Bayi {
+    String nama
+    String jenisKelamin
+    int umur
+    void menangis()
+    void setUmur(int umur)
+    int getUmur()
+  }
+  @enduml
+  #+END_SRC
+3. Pada tabel di bawah ini, terdapat nama-nama class, atribut dan
+  method. Dari tabel tersebut, pilah class, atribut dan method kemudian
+  gambarkan ke dalam *Class Diagram*!
+  |------------+--------+------------+----------|
+  | belang     | nama   | DVD player | play     |
+  | dosen      | lagu   | mengeong   | mengajar |
+  | warna bulu | kucing | pause      | nip      |
+
+* Tugas
+
+1. Modifikasi program di bawah ini, sehingga memunculkan nim serta nama anda!
+
+  #+BEGIN_SRC java
+  class Mahasiswa {
+    private String nim;
+    private String nama;
+
+    public Mahasiswa() {
+    }
+
+    public void setNim(String nim) {
+      this.nim = nim;
+    }
+
+    public String getNim() {
+      return nim;
+    }
+
+    public void setNama(String nama) {
+      this.nama = nama;
+    }
+
+    public String getNama() {
+      return nama;
+    }
+
+    public static void main(String args[]) {
+      Mahasiswa mahasiswa = new Mahasiswa();
+      mahasiswa.setNim("1234567890");
+      System.out.println(mahasiswa.getNim());
+    }
+  }
+  #+END_SRC
+
+2. Rancanglah sebuah class, tuliskan atribut dan method kemudian gambarkan dalam
+   sebuah class diagram!
+3. Kumpulkan semua percobaan serta tugas kepada Dosen Pengajar!

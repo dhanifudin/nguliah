@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id" xml:lang="id">
+<head>
+<!-- 2017-02-26 Sun 09:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jobsheet 02</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dian Hanifudin Subhi" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Jobsheet 02
+<br>
+<span class="subtitle">Pengenalan Java</span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga3b6f0c">1. Percobaan</a>
+<ul>
+<li><a href="#org98a85a7">1.1. Instalasi JDK (Java Development Kit)</a></li>
+<li><a href="#orgfb5dfd3">1.2. Aplikasi Java Sederhana</a></li>
+<li><a href="#org55f0950">1.3. UML (Class Diagram) Sederhana</a></li>
+</ul>
+</li>
+<li><a href="#orgd03fc76">2. Tugas</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga3b6f0c" class="outline-2">
+<h2 id="orga3b6f0c"><span class="section-number-2">1</span> Percobaan</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org98a85a7" class="outline-3">
+<h3 id="org98a85a7"><span class="section-number-3">1.1</span> Instalasi JDK (Java Development Kit)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>Prosedur Percobaan</b>
+</p>
+
+<ul class="org-ul">
+<li>Download installer Java Development Kit (JDK) pada alamat <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">ini</a>.</li>
+<li>Pilih <b>Accept License Agreement</b> kemudian pilih JDK berdasarkan sistem operasi
+yang digunakan. (Catatan: untuk sistem operasi berbasis UNIX, sebaiknya
+cara instalasi menggunakan <b>package manager</b> yang tersedia, contoh: apt, yum
+atau homebrew).</li>
+<li>Setelah file installer selesai diunduh, kemudian jalankan serta ikuti
+instruksi proses instalasinya.</li>
+<li>Untuk langkah selanjutnya, hanya dikhususkan untuk sistem operasi
+Windows. Pada Windows diperlukan setting <b>PATH</b> terlebih dahulu sehingga
+perintah java dapat dikenali.</li>
+<li>Buka <b>Control Panel</b> &rarr; <b>System</b> &rarr; <b>Advanced System
+Setting</b> &rarr; <b>Environment Variable</b>. Kemudian cari variable
+<b>PATH</b>. Jika belum ada, maka buat variable <b>PATH</b> tersebut.</li>
+<li>Jika variable <b>PATH</b> sudah ada, dan nilai dari variable tersebut sudah ada,
+maka jangan dihapus nilai sebelumnya. Cukup tambahkan <b>C:\Program
+Files\Java\jdk1.7.0<sub>45\bin</sub></b> (sebagai pemisah antar nilai digunakan karakter
+;). Lokasi nilai JDK yang ditambahkan sesuaikan folder dimana Java terinstall.</li>
+
+<li>Buka Command Prompt dan ketikkan perintah <b>javac -version</b>. Jika perintah
+tersebut dikenali, maka lingkungan sistem operasi windows telah mendukung
+program java. Jika belum dikenali, ada kemungkinan kesalahan dalam memasukkan
+lokasi direktori <b>bin</b> pada variable <b>PATH</b>.</li>
+</ul>
+
+<p>
+<b>Pertanyaan</b>
+</p>
+<ol class="org-ol">
+<li>Jelaskan apa kegunaan memasukkan lokasi folder bin dari Java ke dalam
+variable <b>PATH</b>?</li>
+<li>Selain JDK, ada istilah JRE dan JVM. Jelaskan apa perbedaan dari ketiga
+istilah tersebut!</li>
+<li>Jelaskan mengapa program Java bersifat Multiplatform?</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfb5dfd3" class="outline-3">
+<h3 id="orgfb5dfd3"><span class="section-number-3">1.2</span> Aplikasi Java Sederhana</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>Prosedur Percobaan</b>
+</p>
+
+<ul class="org-ul">
+<li>Buka aplikasi text editor (Sublime, Notepad++, Atom atau Notepad) yang telah
+terinstall di komputer anda!</li>
+<li>Buat file baru dengan nama <b>HelloWorld.java</b></li>
+<li><p>
+Kemudian tulisk kode program di bawah ini!
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #0000FF;">class</span> <span style="color: #6434A3;">HelloWorld</span> {
+  <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">main</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">args</span>[]) {
+    System.out.println(<span style="color: #008000;">"Hello World!"</span>);
+  }
+}
+</pre>
+</div></li>
+<li>Simpan, kemudian buka aplikasi <b>Command Prompt</b> dan masuk ke lokasi folder
+dimana file <b>HelloWorld.java</b> tersimpan.</li>
+<li><p>
+Compile <b>HelloWorld.java</b> dengan perintah.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">javac HelloWorld.java
+</pre>
+</div></li>
+<li>Perhatikan hasil proses kompilasi, jika proses kompilasi berhasil akan muncul
+file baru dengan nama <b>HelloWorld.class</b></li>
+<li><p>
+Untuk menjalankan program yang telah dikompilasi, masukkan perintah
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">java HelloWorld
+</pre>
+</div></li>
+</ul>
+
+<p>
+<b>Pertanyaan</b>
+</p>
+
+<ol class="org-ol">
+<li>Jelaskan apa kegunaan perintah <b>javac NamaFile.java</b>? Apa yang dihasilkan
+dari perintah <b>javac</b> tersebut?</li>
+<li>Jelaskan apa kegunaan perintah <b>java NamaClass</b>?</li>
+<li>Apa kegunaan fungsi <b>main()</b> pada blok kode Java?</li>
+<li>Apa kegunaan kata kunci <b>class</b> dalam program Java?</li>
+<li>Apa kegunaan perintah <b>System.out.println()</b> dalam program Java?</li>
+<li>Ambil kesimpulan tentang bagaimana tahapan proses pembuatan program Java
+berdasarkan percobaan tersebut!</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org55f0950" class="outline-3">
+<h3 id="org55f0950"><span class="section-number-3">1.3</span> UML (Class Diagram) Sederhana</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Untuk membuat <b>Class Diagram</b> dapat menggunakan perangkat lunak yang khusus
+dirancang untuk membuat UML. Dalam percobaan ini digunakan perangkat lunak
+StarUML. Anda dapat menggunakan perangkat lunak lainnya.
+</p>
+
+<p>
+<b>Prosedur Percobaan</b>
+</p>
+
+<ul class="org-ul">
+<li>Unduh installer StarUML pada alamat <a href="http://staruml.io/download"><a href="http://staruml.io/download">http://staruml.io/download</a></a>.</li>
+<li>Pilih installer sesuai dengan sistem operasi yang anda gunakan.</li>
+<li>Setelah installer tersimpan, jalankan dan ikuti proses instalasi.</li>
+<li>Tampilan utama StarUml terdiri dari beberapa panel
+<ul class="org-ul">
+<li><b>Main</b>: digunakan untuk meletakkan model sebuah diagram.</li>
+<li><b>Working Diagram</b>: panel yang menampilkan semua daftar diagram.</li>
+<li><b>Toolbox</b>: panel yang digunakan untuk menambahkan model serta relasi.</li>
+<li><b>Model Explorer</b>: panel yang me-list semua model yang terlibat dalam diagram</li>
+<li><b>Editors</b>: panel yang digunakan untuk mengatur <b>styles</b> serta <b>properties</b>
+dari model.</li>
+<li><b>Minimap</b>: panel yang menampilkan diagram dalam ukuran mini.</li>
+</ul></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/staruml-ui.png" alt="staruml-ui.png" width="80%" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Untuk menambahkan class baru, pada <b>Model Explorer</b> klik kanan <b>Model</b>
+&rarr; <b>Add</b> &rarr; <b>Class</b> atau gunakan panel <b>Toolbox</b></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/add-class.png" alt="add-class.png" width="250px" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><p>
+Ubah nama class menjadi <b>Mahasiswa</b> pada panel <b>Editors</b> &rarr;
+<b>Properties</b>.
+</p>
+
+<div class="notice notice-info">
+<p>
+Nama class diawali dengan huruf kapital, jika lebih dari satu kata setiap awal
+kata menggunakan huruf besar (aturan seperti ini dikenal dengan istilah CamelCase).
+</p></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/class-mahasiswa.png" alt="class-mahasiswa.png" width="250px" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Kemudian drag class <b>Mahasiswa</b> ke dalam Main panel.</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/mahasiswa.png" alt="mahasiswa.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Untuk menambahkan atribut, klik kanan pada model class <b>Add</b> &rarr;
+<b>Attribute</b></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/add-attribute.png" alt="add-attribute.png" width="250px" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><p>
+Set nama atribut menjadi nim pada panel <b>Editors</b>
+</p>
+
+<div class="notice notice-info">
+<p>
+Untuk menambahkan tipe data anda dapat menggunakan <b>type</b> pada panel <b>Editors</b>
+&rarr; <b>Properties</b>
+</p></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/nim-property.png" alt="nim-property.png" width="250px" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./images/02/nim-mahasiswa.png" alt="nim-mahasiswa.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Ulangi langkah menambahkan atribut untuk atribut nama.</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/nama-mahasiswa.png" alt="nama-mahasiswa.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Untuk menambahkan method pada class, klik kanan pada model class <b>Add</b>
+&rarr; <b>Operation</b> (pada StarUML method dinotasikan dengan <b>Operation</b>).</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/add-operation.png" alt="add-operation.png" width="250px" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Ubah nama method menjadi belajar pada panel <b>Editors</b></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/02/belajar-property.png" alt="belajar-property.png" width="250px" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./images/02/belajar-mahasiswa.png" alt="belajar-mahasiswa.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li><p>
+Untuk menyimpan menjadi gambar, gunakan menu <b>File</b> &rarr; <b>Export Diagram As</b> &rarr; <b>PNG</b>
+</p>
+
+<div class="notice notice-warning">
+<p>
+Jangan menggunakan <b>screenshoot</b> untuk menyimpan menjadi gambar.
+</p></li>
+</ul>
+
+<p>
+<b>Pertanyaan</b>
+</p>
+
+<ol class="org-ol">
+<li>Apa yang membedakan antara atribut dengan method?</li>
+<li><p>
+Buatlah <b>Class Diagram</b> dari class di bawah ini!
+</p>
+
+<div class="figure">
+<p><img src="images/02/class.png" alt="class.png" />
+</p>
+</div></li>
+
+<li><p>
+Pada tabel di bawah ini, terdapat nama-nama class, atribut dan
+method. Dari tabel tersebut, pilah class, atribut dan method kemudian
+gambarkan ke dalam <b>Class Diagram</b>!
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">belang</td>
+<td class="org-left">nama</td>
+<td class="org-left">DVD player</td>
+<td class="org-left">play</td>
+</tr>
+
+<tr>
+<td class="org-left">dosen</td>
+<td class="org-left">lagu</td>
+<td class="org-left">mengeong</td>
+<td class="org-left">mengajar</td>
+</tr>
+
+<tr>
+<td class="org-left">warna bulu</td>
+<td class="org-left">kucing</td>
+<td class="org-left">pause</td>
+<td class="org-left">nip</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd03fc76" class="outline-2">
+<h2 id="orgd03fc76"><span class="section-number-2">2</span> Tugas</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li><p>
+Modifikasi program di bawah ini, sehingga memunculkan nim serta nama anda!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #0000FF;">class</span> <span style="color: #6434A3;">Mahasiswa</span> {
+  <span style="color: #0000FF;">private</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nim</span>;
+  <span style="color: #0000FF;">private</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nama</span>;
+
+  <span style="color: #0000FF;">public</span> <span style="color: #006699;">Mahasiswa</span>() {
+  }
+
+  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">setNim</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nim</span>) {
+    <span style="color: #0000FF;">this</span>.nim = nim;
+  }
+
+  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">getNim</span>() {
+    <span style="color: #0000FF;">return</span> nim;
+  }
+
+  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">setNama</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">nama</span>) {
+    <span style="color: #0000FF;">this</span>.nama = nama;
+  }
+
+  <span style="color: #0000FF;">public</span> <span style="color: #6434A3;">String</span> <span style="color: #006699;">getNama</span>() {
+    <span style="color: #0000FF;">return</span> nama;
+  }
+
+  <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">void</span> <span style="color: #006699;">main</span>(<span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">args</span>[]) {
+    <span style="color: #6434A3;">Mahasiswa</span> <span style="color: #BA36A5;">mahasiswa</span> = <span style="color: #0000FF;">new</span> <span style="color: #6434A3;">Mahasiswa</span>();
+    mahasiswa.setNim(<span style="color: #008000;">"1234567890"</span>);
+    System.out.println(mahasiswa.getNim());
+  }
+}
+</pre>
+</div></li>
+
+<li>Rancanglah sebuah class, tuliskan atribut dan method kemudian gambarkan dalam
+sebuah class diagram!</li>
+<li>Kumpulkan semua percobaan serta tugas kepada Dosen Pengajar!</li>
+</ol>
+</div>
+</div>
+</div>
+</body>
+</html>
