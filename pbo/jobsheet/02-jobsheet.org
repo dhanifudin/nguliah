@@ -6,7 +6,7 @@
 
 #+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
 #+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
-#+HTML_DOCTYPE: xhtml-strict
+#+HTML_DOCTYPE: html5
 #+HTML_CONTAINER: div
 #+DESCRIPTION:
 #+KEYWORDS:
@@ -14,7 +14,7 @@
 #+HTML_LINK_UP:
 #+HTML_MATHJAX:
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
-#+HTML_HEAD_EXTRA:
+#+HTML_HEAD_EXTRA:<script src="../../assets/js/jobsheet.js"></script>
 #+INFOJS_OPT:
 #+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
 #+LATEX_HEADER:
@@ -303,6 +303,7 @@ StarUML. Anda dapat menggunakan perangkat lunak lainnya.
   #+HTML: <div class="notice notice-info">
   Nama class diawali dengan huruf kapital, jika lebih dari satu kata setiap awal
   kata menggunakan huruf besar (aturan seperti ini dikenal dengan istilah CamelCase).
+  #+HTML: </div>
 
 #+ATTR_HTML: :width 150px
 [[./images/02/class-mahasiswa.png]]
@@ -319,7 +320,7 @@ StarUML. Anda dapat menggunakan perangkat lunak lainnya.
 
 - Set nama atribut menjadi nim pada panel *Editors*
 
-  #+HTML: <div class="notice notice-info">
+  #+ATTR_HTML: <div class="notice notice-info">
   Untuk menambahkan tipe data anda dapat menggunakan *type* pada panel *Editors*
   \rightarrow *Properties*
 
@@ -349,6 +350,7 @@ StarUML. Anda dapat menggunakan perangkat lunak lainnya.
 
   #+HTML: <div class="notice notice-warning">
   Jangan menggunakan *screenshoot* untuk menyimpan menjadi gambar.
+  #+HTML: </div>
 
 *Pertanyaan*
 
