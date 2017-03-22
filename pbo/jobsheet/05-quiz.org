@@ -1,0 +1,42 @@
+#+TITLE: Quiz 1
+#+SUBTITLE: Pemrograman Berorientasi Objek
+#+AUTHOR: Dian Hanifudin Subhi
+#+EMAIL: dhanifudin@gmail.com
+#+LANGUAGE: id
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+#+HTML_HEAD_EXTRA:
+#+INFOJS_OPT:
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
+#+LATEX_HEADER:
+
+#+HTML: <div class="outline-2">
+#+HTML: <h2>Soal</h2>
+Jawablah pertanyaan-pertanyaan berikut dengan jawaban yang benar!
+
+1. Buatlah sebuah /class/ Balok, /class/ tersebut dapat digunakan untuk
+   menghitung volume serta luas permukaan dari informasi nilai atribut!
+   Dari /class/ yang telah dibuat, instansiasi objek kemudian hitung volume serta
+   luas permukaan!
+   \begin{equation}
+   L = 2 * (p * l + p * t + l * t) \space\space V = p * l * t
+   \end{equation}
+
+2. Buatlah sebuah /class/ Celcius yang dapat melakukan konversi suhu ke Reamur
+   dan Fahrenheit dengan menggunakan static method! Rumus konversi dapat dilihat
+   di bawah ini.
+
+   \begin{equation}
+   R = \frac{4}{5} C \space\space F = \frac{9}{5} C + 32
+   \end{equation}
+
+#+HTML: </div>
