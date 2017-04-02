@@ -31,5 +31,7 @@
 - [[./04-jobsheet.html][Java Basic Programming]]
 * Jobsheet 06
 - [[./06-jobsheet.html][Enkapsulasi]]
+* Quiz 05
+- [[./05-quiz.html][Quiz 1]]
 * Jobsheet 07
 - [[./07-jobsheet.html][Relasi Kelas]]

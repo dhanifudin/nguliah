@@ -1,0 +1,54 @@
+#+TITLE: Quiz B
+#+SUBTITLE: Pemrograman Berorientasi Objek
+#+AUTHOR: Dian Hanifudin Subhi
+#+EMAIL: dhanifudin@gmail.com
+#+LANGUAGE: id
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t toc:nil
+#+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+#+HTML_HEAD_EXTRA:
+#+INFOJS_OPT:
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
+#+LATEX_HEADER:
+
+#+HTML: <div class="outline-2">
+#+HTML: <h2>Soal</h2>
+Jawablah pertanyaan-pertanyaan berikut dengan jawaban yang benar!
+
+1. Desainlah sebuah class dengan menggunakan /Diagram Class/, setidaknya class
+   mempunyai minimal masing-masing 2 atribut serta method. Dari /Diagram Class/
+   yang telah dirancang implementasikan ke dalam bahasa pemrograman Java!
+
+2. Dari deklarasi variable di bawah ini, manakah yang benar dan salah! Sertakan
+   hasil jika jawaban benar, dan alasan jika pernyataan salah.
+
+   a.
+   #+BEGIN_SRC java
+   char String = "Selamat Pagi";
+   #+END_SRC
+
+   b.
+   #+BEGIN_SRC java
+   double a = 2.5;
+   int h = 10 * (int) a;
+   #+END_SRC
+
+   c.
+   #+BEGIN_SRC java
+   char huruf = 'A';
+   char kalimat = huruf + "BC";
+   #+END_SRC
+
+3. Buatlah sebuah class yang di dalamnya terdapat static method untuk menghitung
+   luas permukaan balok! Sebelum proses menghitung luas permukaan, terdapat pengecekan bilangan
+   tidak boleh negatif. Dari class yang telah dibuat, buatlah program untuk menghitung
+   luas permukaan balok!
+#+HTML: </div>
