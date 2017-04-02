@@ -29,9 +29,9 @@
 - [[./03-jobsheet.html][Class dan Objek]]
 * Jobsheet 04
 - [[./04-jobsheet.html][Java Basic Programming]]
-* Jobsheet 06
-- [[./06-jobsheet.html][Enkapsulasi]]
 * Quiz 05
 - [[./05-quiz.html][Quiz 1]]
+* Jobsheet 06
+- [[./06-jobsheet.html][Enkapsulasi]]
 * Jobsheet 07
 - [[./07-jobsheet.html][Relasi Kelas]]
