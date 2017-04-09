@@ -1,0 +1,608 @@
+#+TITLE: Jobsheet 08
+#+SUBTITLE: Relasi Kelas
+#+AUTHOR: Dian Hanifudin Subhi
+#+EMAIL: dhanifudin@gmail.com
+#+LANGUAGE: id
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
+#+HTML_DOCTYPE: html5
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+#+HTML_HEAD_EXTRA:<script src="../../assets/js/jobsheet.js"></script>
+#+INFOJS_OPT:
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
+#+LATEX_HEADER:
+
+* Kompetensi
+Setelah menempuh pokok bahasan ini, mahasiswa mampu:
+
+1. Memahami konsep relasi kelas.
+2. Mengimplementasikan relasi has-a dalam program.
+
+* Pendahuluan
+Pada percobaan-percobaan sebelumnya, relasi dalam /class/ dinyatakan dalam
+/one-to-one/. Tetapi ada kalanya relasi /class/ melibatkan lebih dari satu. Hal
+ini disebut dengan /multiplicity/. Untuk relasi lebih detil mengenai
+multiplicity, dapat dilihat pada tabel berikut.
+
+| Multiplicity | Keterangan                                       |
+|--------------+--------------------------------------------------|
+| 0..1         | 0 atau 1 instance                                |
+| 1            | Tepat 1 instance                                 |
+| 0..*         | 0 atau lebih instance                            |
+| 1..*         | Setidaknya 1 instance                            |
+| n            | Tepat n instance (n diganti dengan sebuah angka) |
+| m..n         | Setidaknya m instance, tetapi tidak lebih dari n |
+
+* Percobaan
+** Percobaan 1
+*** Langkah Percobaan
+Sebuah *Kereta Api* dioperasikan oleh *Masinis* serta seorang *Asisten
+Masinis*. Baik *Masinis* maupun *Asisten Masinis* keduanya merupakan *Pegawai*
+PT. Kereta Api Indonesia. Dari ilustrasi cerita tersebut, dapat digambarkan
+dalam diagram kelas sebagai berikut:
+
+#+BEGIN_SRC plantuml :file images/08/plantuml-percobaan1.png
+@startuml
+skinparam classAttributeiconsize 0
+
+note as percobaan1
+KeretaApi dioperasikan oleh seorang masinis dengan tipe Pegawai,
+dibantu oleh asisten dengan tipe Pegawai
+end note
+
+package dhanifudin.relasikelas.percobaan1 {
+
+  class KeretaApi {
+    -nama : String
+    -kelas : String
+    -masinis : Pegawai
+    -asisten : Pegawai
+    +KeretaApi(nama : String, kelas : String, masinis : Pegawai)
+    +KeretaApi(nama : String, kelas : String, masinis : Pegawai, asisten : Pegawai)
+    +setNama(nama : String)
+    +getNama() : String
+    +setKelas(kelas : String)
+    +getKelas() : String
+    +setMasinis(masinis : Pegawai)
+    +getMasinis() : Pegawai
+    +setAsisten(asisten : Pegawai)
+    +getAsisten() : Pegawai
+    +info()
+  }
+
+  class Pegawai {
+    -nip : String
+    -nama : String
+    +Pegawai(nip : String, nama : String)
+    +setNip(nip : String)
+    +getNip() : String
+    +setNama(nama : String)
+    +getNama() : String
+    +info() : String
+  }
+
+  Pegawai - KeretaApi
+  Pegawai - KeretaApi
+}
+
+@enduml
+#+END_SRC
+
+#+HTML: <div class="notice notice-info">
+*Package* digunakan untuk mengorganisasi class-class (biasanya berdasarkan
+ fungsinya). Penamaan *package* menggunakan /lowercase/. Pada umumnya, nama
+ *package* diawali oleh identitas pembuat class (pribadi ataupun
+ organisasi). Gunakan identitas anda dalam package pada percobaan dalam jobsheet
+ ini!
+#+HTML: </div>
+
+1. Perhatikan dan pahami kelas diagram di atas! Kemudian buka aplikasi teks
+   editor anda!
+2. Buatlah class *Pegawai*
+   #+BEGIN_SRC java
+   package dhanifudin.relasikelas.percobaan1;
+
+   public class Pegawai {
+
+   }
+   #+END_SRC
+
+3. Tambahkan atribut-atribut ke dalam class Pegawai
+   #+BEGIN_SRC java
+   ...
+   private String nip;
+   private String nama;
+   ...
+   #+END_SRC
+4. Buat constructor untuk class Pegawai
+   #+BEGIN_SRC java
+   ...
+   public Pegawai(String nip, String nama) {
+      this.nip = nip;
+      this.nama = nama;
+   }
+   ...
+   #+END_SRC
+5. Tambahkan /setter/ dan /getter/ untuk atribut *nip*.
+   #+BEGIN_SRC java
+   ...
+   public String getNip() {
+      return this.nip;
+   }
+
+   public void setNip(String nip) {
+      this.nip = nip;
+   }
+   ...
+   #+END_SRC
+6. Kemudian implementasikan /setter/ dan /getter/ untuk atribut *nama*.
+7. Implementasikan /method/ *info()* dengan mengetikkan kode berikut
+   #+BEGIN_SRC java
+   ...
+   public String info() {
+      String info = "";
+      info += "Nip: " + this.nip + "\n";
+      info += "Nama: " + this.nama + "\n";
+      return info;
+   }
+   ...
+   #+END_SRC
+8. /Compile/ class *Pegawai* dengan perintah /javac/ (jika menggunakan IDE, anda
+   dapat menekan tombol build). Jika tidak ada /error/ lanjutkan untuk membuat
+   class *KeretaApi*.
+9. Buat class *KeretaApi* berdasarkan diagram class.
+   #+BEGIN_SRC java
+   package dhanifudin.relasikelas.percobaan1;
+
+   public class KeretaApi {
+
+   }
+   #+END_SRC
+10. Tambahkan atribut-atribut pada class *KeretaApi*, *nama*, *kelas*, *masinis*
+    dan *asisten*.
+    #+BEGIN_SRC java
+    ...
+    private String nama;
+    private String kelas;
+    private Pegawai masinis;
+    private Pegawai asisten;
+    ...
+    #+END_SRC
+11. Tambahkan constructor pada class *KeretaApi*
+    #+BEGIN_SRC java
+    ...
+    public KeretaApi(String nama, String kelas, Pegawai masinis) {
+      this(nama, kelas, masinis, null);
+    }
+
+    public KeretaApi(String nama, String kelas, Pegawai masinis, Pegawai asisten) {
+      this.nama = nama;
+      this.kelas = kelas;
+      this.masinis = masinis;
+      this.asisten = asisten;
+    }
+    ...
+    #+END_SRC
+12. Tambahkan /setter/ dan /getter/ untuk atribut *nama* kereta api.
+    #+BEGIN_SRC java
+    ...
+    public void setNama(String nama) {
+      this.nama = nama;
+    }
+
+    public String getNama() {
+      return this.nama;
+    }
+    ...
+    #+END_SRC
+13. Kemudian implementasikan juga /setter/ dan /getter/ untuk masing-masing
+    atribut *kelas*, *masinis* serta *asisten*.
+14. Implementasikan method *info()*
+    #+BEGIN_SRC java
+    ...
+    public String info() {
+        String info = "";
+        info += "Nama: " + this.nama + "\n";
+        info += "Kelas: " + this.kelas + "\n";
+        info += "Masinis: \n" + this.masinis.info() + "\n";
+        info += "Asisten: \n" + this.asisten.info() + "\n";
+        return info;
+    }
+    ...
+    #+END_SRC
+15. Buatlah sebuah class *Main1* dalam package yang sama.
+    #+BEGIN_SRC java
+    package dhanifudin.relasikelas.percobaan1;
+
+    public class Main1 {
+      public static void main(String args[]) {
+        Pegawai masinis = new Pegawai("1234", "Spongebob Squarepants");
+        Pegawai asisten = new Pegawai("4567", "Patrick Star");
+        KeretaApi keretaApi = new KeretaApi("Gaya Baru", "Bisnis", masinis, asisten);
+
+        System.out.println(keretaApi.info());
+      }
+    }
+    #+END_SRC
+
+[[./images/08/output-percobaan1.png]]
+
+*** Pertanyaan
+1. Dalam method *info()* pada /class/ *KeretaApi*, baris *this.masinis.info()*
+   dan *this.asisten.info()* digunakan untuk apa?
+2. Buatlah main program baru dengan nama /class/ *Main2* pada package yang sama.
+   #+BEGIN_SRC java
+   package dhanifudin.relasikelas.percobaan1;
+
+   public class Main2 {
+    public static void main(String args[]) {
+      Pegawai masinis = new Pegawai("1234", "Spongebob Squarepants");
+      KeretaApi keretaApi = new KeretaApi("Gaya Baru", "Bisnis", masinis);
+
+      System.out.println(keretaApi.info());
+    }
+   }
+   #+END_SRC
+3. Apa hasil output dari main program tersebut? Mengapa hal tersebut dapat terjadi?
+4. Tanpa merubah main program, perbaiki kode sehingga program dapat berjalan!
+** Percobaan 2
+*** Langkah Percobaan
+#+BEGIN_SRC plantuml :file images/08/plantuml-percobaan2.png
+@startuml
+skinparam classattributeiconsize 0
+
+package dhanifudin.relasikelas.percobaan2 {
+
+  class Penumpang {
+    -ktp : String
+    -nama : String
+    +Penumpang(ktp : String, nama : String)
+    +getKtp() : String
+    +setKtp(ktp : String)
+    +getNama() : String
+    +setNama(nama : String)
+    +info() : String
+  }
+
+  class Kursi {
+    -nomer : String
+    -penumpang : Penumpang
+    +Kursi(nomer : String)
+    +getNomer() : String
+    +setNomer(nomer : String)
+    +getPenumpang() : Penumpang
+    +setPenumpang(penumpang : Penumpang)
+    +info() : String
+  }
+
+  class Gerbong {
+    -kode : String
+    -arrayKursi : Kursi[]
+    +Gerbong(kode : String, jumlah : int)
+    -initKursi()
+    +getKode() : String
+    +setKode(kode : String)
+    +getArrayKursi() : Kursi[]
+    +setPenumpang(penumpang : Penumpang, nomer : int)
+    +info() : String
+  }
+
+  Penumpang "0..1" -- "0..1" Kursi
+  Kursi "1..*" -- "0..1" Gerbong
+}
+
+@enduml
+#+END_SRC
+
+1. Perhatikan dan pahami diagram class tersebut.
+2. Kemudian buka aplikasi teks editor.
+3. Buatlah class *Penumpang* dalam package *percobaan2* (sesuaikan dengan nama
+   package anda.)
+   #+BEGIN_SRC java
+   package dhanifudin.relasikelas.percobaan2;
+
+   public class Penumpang {
+      private String ktp;
+      private String nama;
+   }
+   #+END_SRC
+4. Tambahkan constructor ke dalam class *Penumpang*
+   #+BEGIN_SRC java
+   ...
+   public Penumpang(String ktp, String nama) {
+      this.ktp = ktp;
+      this.nama = nama;
+   }
+   ...
+   #+END_SRC
+5. Untuk setiap atribut, buatlah masing-masing /setter/ dan /getter/.
+6. Implementasikan method *info()* ke dalam class *Penumpang*
+   #+BEGIN_SRC java
+   ...
+   public String info() {
+      String info = "";
+      info += "Ktp: " + ktp + "\n";
+      info += "Nama: " + nama + "\n";
+      return info;
+   }
+   ...
+   #+END_SRC
+7. Buat file class *Kursi* dalam package yang sama
+   #+BEGIN_SRC java
+   package dhanifudin.relasikelas.percobaan2;
+
+   public class Kursi {
+    private String nomer;
+    private Penumpang penumpang;
+
+   }
+   #+END_SRC
+
+8. Tambahkan constructor pada class *Kursi*
+   #+BEGIN_SRC java
+   ...
+   public Kursi(String nomer) {
+      this.nomer = nomer;
+   }
+   ...
+   #+END_SRC
+9. Tambahkan masing-masing atribut yang ada dalam class *Kursi*
+10. Implementasikan method *info()*
+    #+BEGIN_SRC java
+    ...
+    public String info() {
+      String info = "";
+      info += "Nomer: " + nomer + "\n";
+      if (this.penumpang != null) {
+        info += "Penumpang: " + penumpang.info() + "\n";
+      }
+      return info;
+    }
+    ...
+    #+END_SRC
+
+11. Buat class *Gerbong* berikut atribut-atribut kode serta kursi yang bertipe
+    data /Array/.
+    #+BEGIN_SRC java
+    package dhanifudin.relasikelas.percobaan2;
+
+    public class Gerbong {
+    private String kode;
+    private Kursi arrayKursi[];
+
+    }
+    #+END_SRC
+
+12. Tambahkan /constructor/ ke dalam class *Gerbong*.
+    #+BEGIN_SRC java
+    public Gerbong(String kode, int jumlah) {
+    this.kode = kode;
+    this.arrayKursi = new Kursi[jumlah];
+    // Digunakan untuk inisialisasi kursi yang ada dalam array
+    this.initKursi();
+    }
+    #+END_SRC
+
+13. Inisialisasi kursi dengan menggunakan method *initKursi()*
+    #+BEGIN_SRC java
+    ...
+    private void initKursi() {
+      for (int i = 0; i < arrayKursi.length; i++) {
+        this.arrayKursi[i] = new Kursi(String.valueOf(i + 1));
+      }
+    }
+    ...
+    #+END_SRC
+
+14. Tambahkan /setter/ dan /getter/ untuk kelas Gerbong.
+    #+BEGIN_SRC java
+    ...
+    public String getKode() {
+      return kode;
+    }
+
+    public void setKode(String kode) {
+      this.kode = kode;
+    }
+
+    public Kursi[] getArraykursi() {
+      return arrayKursi;
+    }
+    ...
+    #+END_SRC
+
+15. Implementasikan method *info()*
+    #+BEGIN_SRC java
+    ...
+    public String info() {
+      String info = "";
+      info += "Kode: " + kode + "\n";
+      for (Kursi kursi : arrayKursi) {
+        info += kursi.info();
+      }
+      return info;
+    }
+    ...
+    #+END_SRC
+
+16. Implementasikan method untuk memasukkan penumpang sesuai dengan nomer kursi.
+    #+BEGIN_SRC java
+    ...
+    public void setPenumpang(Penumpang penumpang, int nomer) {
+      this.arrayKursi[nomer - 1] .setPenumpang(penumpang);
+    }
+    ...
+    #+END_SRC
+
+17. Buat class dengan nama *Percobaan2*, tambahkan method *main*.
+    #+BEGIN_SRC java
+    package dhanifudin.relasikelas.percobaan2;
+
+    public class Percobaan2 {
+      public static void main(String args[]) {
+        Penumpang p = new Penumpang("12345", "Mr. Krab");
+        Gerbong gerbong = new Gerbong("A", 10);
+
+        gerbong.setPenumpang(p, 1);
+
+        System.out.println(gerbong.info());
+      }
+    }
+    #+END_SRC
+*** Pertanyaan
+1. Pada main program dalam class *Percobaan2*, berapakah jumlah kursi dalam
+   Gerbong A?
+2. Perhatikan potongan kode pada method *info()* dalam /class/ *Kursi*. Apa
+   maksud kode tersebut?
+   #+BEGIN_SRC java
+   ...
+   if (this.penumpang != null) {
+      info += "Penumpang: " + penumpang.info() + "\n";
+   }
+   ...
+   #+END_SRC
+
+3. Mengapa pada method *setPenumpang()* dalam /class/ *Gerbong*, nilai nomer
+   dikurangi dengan angka 1?
+
+4. Instansiasi obyek baru *budi* dengan tipe *Penumpang*, kemudian masukkan obyek baru tersebut
+   pada gerbong dengan *gerbong.setPenumpang(budi, 1)*. Apakah yang terjadi?
+
+5. Modifikasi program sehingga, tidak diperkenankan untuk menduduki kursi yang
+   sudah ada penumpang lain!
+
+* Latihan
+#+BEGIN_SRC plantuml :file images/08/plantuml-latihan.png
+@startuml
+skinparam classattributeiconsize 0
+
+package dhanifudin.relasikelas.percobaan1 {
+  class Pegawai {
+    -nip : String
+    -nama : String
+    +Pegawai(nip : String, nama : String)
+    +setNip(nip : String)
+    +getNip() : String
+    +setNama(nama : String)
+    +getNama() : String
+    +info() : String
+  }
+}
+
+package dhanifudin.relasikelas.percobaan2 {
+  class Penumpang {
+    -ktp : String
+    -nama : String
+    +Penumpang(ktp : String, nama : String)
+    +getKtp() : String
+    +setKtp(ktp : String)
+    +getNama() : String
+    +setNama(nama : String)
+    +info() : String
+  }
+
+  class Kursi {
+    -nomer : String
+    -penumpang : Penumpang
+    +Kursi(nomer : String)
+    +getNomer() : String
+    +setNomer(nomer : String)
+    +getPenumpang() : Penumpang
+    +setPenumpang(penumpang : Penumpang)
+    +info() : String
+  }
+
+  class Gerbong {
+    -kode : String
+    -arrayKursi : Kursi[]
+    +Gerbong(kode : String, jumlah : int)
+    -initKursi()
+    +getKode() : String
+    +setKode(kode : String)
+    +getArrayKursi() : Kursi[]
+    +setPenumpang(penumpang : Penumpang, nomer : int)
+    +info() : String
+  }
+
+  Penumpang "0..1" -- "0..1" Kursi
+  Kursi "1..*" -- "0..1" Gerbong
+}
+
+package dhanifudin.relasikelas.latihan {
+  class KeretaApi {
+    -{static} JUMLAH_KURSI : int
+    -nama : String
+    -kelas : String
+    -masinis : Pegawai
+    -gerbongArray : Gerbong[]
+    +KeretaApi(nama : String, kelas : String, masinis : Pegawai, jmlGerbong: int)
+    -initGerbong()
+    +setNama(nama : String)
+    +getNama() : String
+    +setKelas(kelas : String)
+    +getKelas() : String
+    +setMasinis(masinis : Pegawai)
+    +getMasinis() : Pegawai
+    +info()
+  }
+
+  KeretaApi -- Pegawai
+  KeretaApi "0..1" -- "1..*" Gerbong
+}
+@enduml
+#+END_SRC
+
+#+HTML: <div class="notice notice-info">
+Untuk menggunakan class dalam package yang berbeda, dapat digunakan keyword
+import. Contoh: *import dhanifudin.relasikelas.percobaan1.Pegawai*;
+#+HTML: </div>
+
+1. Buatlah class baru *KeretaApi* pada package *latihan*.
+  #+BEGIN_SRC java
+  package dhanifudin.relasikelas.latihan;
+
+  public class KeretaApi {
+    // Konstanta dalam java
+    private static final int JUMLAH_KURSI = 10;
+
+    private String nama;
+    private String kelas;
+    private Pegawai masinis;
+    private Gerbong gerbongArray[];
+
+  }
+  #+END_SRC
+
+2. Tambahkan constructor *KeretaApi*
+  #+BEGIN_SRC java
+  public KeretaApi(String nama, String kelas, Pegawai masinis, int jmlGerbong) {
+    this.nama = nama;
+    this.kelas = kelas;
+    this.masinis = masinis;
+    this.gerbongArray = new Gerbong[jmlGerbong];
+    this.initGerbong();
+  }
+  #+END_SRC
+
+3. Implementasikan method *initGerbong()*
+  #+BEGIN_SRC java
+  private void initGerbong() {
+    for (int i = 0; i < gerbongArray.length; i++) {
+      gerbongArray[i] =
+        new Gerbong(String.valueOf((char)((int) 'A' + i)), KeretaApi.JUMLAH_KURSI);
+    }
+  }
+  #+END_SRC
+
+4. Tambahkan method sehingga penumpang dapat memesan KeretaApi sesuai dengan
+   gerbong dan nomer yang diinginkan!
+
+5. Tampilkan informasi mengenai detail KeretaApi meliputi nama Penumpang dalam
+   setiap gerbong, berikut jumlah kursi yang masih tersedia!

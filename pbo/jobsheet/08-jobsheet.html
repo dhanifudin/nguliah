@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<!-- 2017-04-10 Mon 02:01 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jobsheet 08</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Dian Hanifudin Subhi">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+<script src="../../assets/js/jobsheet.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Jobsheet 08
+<br>
+<span class="subtitle">Relasi Kelas</span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga71133b">1. Kompetensi</a></li>
+<li><a href="#orgf3924d6">2. Pendahuluan</a></li>
+<li><a href="#orgafe85ae">3. Percobaan</a>
+<ul>
+<li><a href="#org19913ae">3.1. Percobaan 1</a>
+<ul>
+<li><a href="#orgc6bfdf2">3.1.1. Langkah Percobaan</a></li>
+<li><a href="#org1b0cad2">3.1.2. Pertanyaan</a></li>
+</ul>
+</li>
+<li><a href="#orgcc7e6db">3.2. Percobaan 2</a>
+<ul>
+<li><a href="#orgea5e9f5">3.2.1. Langkah Percobaan</a></li>
+<li><a href="#orgbf285cb">3.2.2. Pertanyaan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga4d7cb2">4. Latihan</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga71133b" class="outline-2">
+<h2 id="orga71133b"><span class="section-number-2">1</span> Kompetensi</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Setelah menempuh pokok bahasan ini, mahasiswa mampu:
+</p>
+
+<ol class="org-ol">
+<li>Memahami konsep relasi kelas.</li>
+<li>Mengimplementasikan relasi has-a dalam program.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgf3924d6" class="outline-2">
+<h2 id="orgf3924d6"><span class="section-number-2">2</span> Pendahuluan</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Pada percobaan-percobaan sebelumnya, relasi dalam <i>class</i> dinyatakan dalam
+<i>one-to-one</i>. Tetapi ada kalanya relasi <i>class</i> melibatkan lebih dari satu. Hal
+ini disebut dengan <i>multiplicity</i>. Untuk relasi lebih detil mengenai
+multiplicity, dapat dilihat pada tabel berikut.
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Multiplicity</th>
+<th scope="col" class="org-left">Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">0..1</td>
+<td class="org-left">0 atau 1 instance</td>
+</tr>
+
+<tr>
+<td class="org-left">1</td>
+<td class="org-left">Tepat 1 instance</td>
+</tr>
+
+<tr>
+<td class="org-left">0..*</td>
+<td class="org-left">0 atau lebih instance</td>
+</tr>
+
+<tr>
+<td class="org-left">1..*</td>
+<td class="org-left">Setidaknya 1 instance</td>
+</tr>
+
+<tr>
+<td class="org-left">n</td>
+<td class="org-left">Tepat n instance (n diganti dengan sebuah angka)</td>
+</tr>
+
+<tr>
+<td class="org-left">m..n</td>
+<td class="org-left">Setidaknya m instance, tetapi tidak lebih dari n</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgafe85ae" class="outline-2">
+<h2 id="orgafe85ae"><span class="section-number-2">3</span> Percobaan</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org19913ae" class="outline-3">
+<h3 id="org19913ae"><span class="section-number-3">3.1</span> Percobaan 1</h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-orgc6bfdf2" class="outline-4">
+<h4 id="orgc6bfdf2"><span class="section-number-4">3.1.1</span> Langkah Percobaan</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+Sebuah <b>Kereta Api</b> dioperasikan oleh <b>Masinis</b> serta seorang <b>Asisten
+Masinis</b>. Baik <b>Masinis</b> maupun <b>Asisten Masinis</b> keduanya merupakan <b>Pegawai</b>
+PT. Kereta Api Indonesia. Dari ilustrasi cerita tersebut, dapat digambarkan
+dalam diagram kelas sebagai berikut:
+</p>
+
+
+<div class="figure">
+<p><img src="images/08/plantuml-percobaan1.png" alt="plantuml-percobaan1.png">
+</p>
+</div>
+
+<div class="notice notice-info">
+<p>
+<b>Package</b> digunakan untuk mengorganisasi class-class (biasanya berdasarkan
+ fungsinya). Penamaan <b>package</b> menggunakan <i>lowercase</i>. Pada umumnya, nama
+ <b>package</b> diawali oleh identitas pembuat class (pribadi ataupun
+ organisasi). Gunakan identitas anda dalam package pada percobaan dalam jobsheet
+ ini!
+</p>
+</div>
+
+<ol class="org-ol">
+<li>Perhatikan dan pahami kelas diagram di atas! Kemudian buka aplikasi teks
+editor anda!</li>
+<li><p>
+Buatlah class <b>Pegawai</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan1</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Pegawai</span> {
+
+}
+</pre>
+</div></li>
+
+<li><p>
+Tambahkan atribut-atribut ke dalam class Pegawai
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">private</span> String nip;
+<span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>;
+...
+</pre>
+</div></li>
+<li><p>
+Buat constructor untuk class Pegawai
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> Pegawai(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">nip</span>, <span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>) {
+   <span style="color: #a020f0;">this</span>.nip = nip;
+   <span style="color: #a020f0;">this</span>.nama = nama;
+}
+...
+</pre>
+</div></li>
+<li><p>
+Tambahkan <i>setter</i> dan <i>getter</i> untuk atribut <b>nip</b>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> String getNip() {
+   <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">this</span>.nip;
+}
+
+<span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">setNip</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">nip</span>) {
+   <span style="color: #a020f0;">this</span>.nip = nip;
+}
+...
+</pre>
+</div></li>
+<li>Kemudian implementasikan <i>setter</i> dan <i>getter</i> untuk atribut <b>nama</b>.</li>
+<li><p>
+Implementasikan <i>method</i> <b>info()</b> dengan mengetikkan kode berikut
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> String info() {
+   <span style="color: #228b22;">String</span> <span style="color: #a0522d;">info</span> = <span style="color: #8b2252;">""</span>;
+   info += <span style="color: #8b2252;">"Nip: "</span> + <span style="color: #a020f0;">this</span>.nip + <span style="color: #8b2252;">"\n"</span>;
+   info += <span style="color: #8b2252;">"Nama: "</span> + <span style="color: #a020f0;">this</span>.nama + <span style="color: #8b2252;">"\n"</span>;
+   <span style="color: #a020f0;">return</span> info;
+}
+...
+</pre>
+</div></li>
+<li><i>Compile</i> class <b>Pegawai</b> dengan perintah <i>javac</i> (jika menggunakan IDE, anda
+dapat menekan tombol build). Jika tidak ada <i>error</i> lanjutkan untuk membuat
+class <b>KeretaApi</b>.</li>
+<li><p>
+Buat class <b>KeretaApi</b> berdasarkan diagram class.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan1</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">KeretaApi</span> {
+
+}
+</pre>
+</div></li>
+<li><p>
+Tambahkan atribut-atribut pada class <b>KeretaApi</b>, <b>nama</b>, <b>kelas</b>, <b>masinis</b>
+dan <b>asisten</b>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">private</span> String nama;
+<span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">kelas</span>;
+<span style="color: #a020f0;">private</span> <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">masinis</span>;
+<span style="color: #a020f0;">private</span> <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">asisten</span>;
+...
+</pre>
+</div></li>
+<li><p>
+Tambahkan constructor pada class <b>KeretaApi</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> KeretaApi(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>, <span style="color: #228b22;">String</span> <span style="color: #a0522d;">kelas</span>, <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">masinis</span>) {
+  <span style="color: #a020f0;">this</span>(nama, kelas, masinis, <span style="color: #008b8b;">null</span>);
+}
+
+<span style="color: #a020f0;">public</span> <span style="color: #0000ff;">KeretaApi</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>, <span style="color: #228b22;">String</span> <span style="color: #a0522d;">kelas</span>, <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">masinis</span>, <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">asisten</span>) {
+  <span style="color: #a020f0;">this</span>.nama = nama;
+  <span style="color: #a020f0;">this</span>.kelas = kelas;
+  <span style="color: #a020f0;">this</span>.masinis = masinis;
+  <span style="color: #a020f0;">this</span>.asisten = asisten;
+}
+...
+</pre>
+</div></li>
+<li><p>
+Tambahkan <i>setter</i> dan <i>getter</i> untuk atribut <b>nama</b> kereta api.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> setNama(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>) {
+  <span style="color: #a020f0;">this</span>.nama = nama;
+}
+
+<span style="color: #a020f0;">public</span> <span style="color: #228b22;">String</span> <span style="color: #0000ff;">getNama</span>() {
+  <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">this</span>.nama;
+}
+...
+</pre>
+</div></li>
+<li>Kemudian implementasikan juga <i>setter</i> dan <i>getter</i> untuk masing-masing
+atribut <b>kelas</b>, <b>masinis</b> serta <b>asisten</b>.</li>
+<li><p>
+Implementasikan method <b>info()</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> String info() {
+    <span style="color: #228b22;">String</span> <span style="color: #a0522d;">info</span> = <span style="color: #8b2252;">""</span>;
+    info += <span style="color: #8b2252;">"Nama: "</span> + <span style="color: #a020f0;">this</span>.nama + <span style="color: #8b2252;">"\n"</span>;
+    info += <span style="color: #8b2252;">"Kelas: "</span> + <span style="color: #a020f0;">this</span>.kelas + <span style="color: #8b2252;">"\n"</span>;
+    info += <span style="color: #8b2252;">"Masinis: \n"</span> + <span style="color: #a020f0;">this</span>.masinis.info() + <span style="color: #8b2252;">"\n"</span>;
+    info += <span style="color: #8b2252;">"Asisten: \n"</span> + <span style="color: #a020f0;">this</span>.asisten.info() + <span style="color: #8b2252;">"\n"</span>;
+    <span style="color: #a020f0;">return</span> info;
+}
+...
+</pre>
+</div></li>
+<li><p>
+Buatlah sebuah class <b>Main1</b> dalam package yang sama.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan1</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Main1</span> {
+  <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">args</span>[]) {
+    <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">masinis</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Pegawai</span>(<span style="color: #8b2252;">"1234"</span>, <span style="color: #8b2252;">"Spongebob Squarepants"</span>);
+    <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">asisten</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Pegawai</span>(<span style="color: #8b2252;">"4567"</span>, <span style="color: #8b2252;">"Patrick Star"</span>);
+    <span style="color: #228b22;">KeretaApi</span> <span style="color: #a0522d;">keretaApi</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">KeretaApi</span>(<span style="color: #8b2252;">"Gaya Baru"</span>, <span style="color: #8b2252;">"Bisnis"</span>, masinis, asisten);
+
+    System.out.println(keretaApi.info());
+  }
+}
+</pre>
+</div></li>
+</ol>
+
+
+<div class="figure">
+<p><img src="./images/08/output-percobaan1.png" alt="output-percobaan1.png">
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b0cad2" class="outline-4">
+<h4 id="org1b0cad2"><span class="section-number-4">3.1.2</span> Pertanyaan</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ol class="org-ol">
+<li>Dalam method <b>info()</b> pada <i>class</i> <b>KeretaApi</b>, baris <b>this.masinis.info()</b>
+dan <b>this.asisten.info()</b> digunakan untuk apa?</li>
+<li><p>
+Buatlah main program baru dengan nama <i>class</i> <b>Main2</b> pada package yang sama.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan1</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Main2</span> {
+ <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">args</span>[]) {
+   <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">masinis</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Pegawai</span>(<span style="color: #8b2252;">"1234"</span>, <span style="color: #8b2252;">"Spongebob Squarepants"</span>);
+   <span style="color: #228b22;">KeretaApi</span> <span style="color: #a0522d;">keretaApi</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">KeretaApi</span>(<span style="color: #8b2252;">"Gaya Baru"</span>, <span style="color: #8b2252;">"Bisnis"</span>, masinis);
+
+   System.out.println(keretaApi.info());
+ }
+}
+</pre>
+</div></li>
+<li>Apa hasil output dari main program tersebut? Mengapa hal tersebut dapat terjadi?</li>
+<li>Tanpa merubah main program, perbaiki kode sehingga program dapat berjalan!</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc7e6db" class="outline-3">
+<h3 id="orgcc7e6db"><span class="section-number-3">3.2</span> Percobaan 2</h3>
+<div class="outline-text-3" id="text-3-2">
+</div><div id="outline-container-orgea5e9f5" class="outline-4">
+<h4 id="orgea5e9f5"><span class="section-number-4">3.2.1</span> Langkah Percobaan</h4>
+<div class="outline-text-4" id="text-3-2-1">
+
+<div class="figure">
+<p><img src="images/08/plantuml-percobaan2.png" alt="plantuml-percobaan2.png">
+</p>
+</div>
+
+<ol class="org-ol">
+<li>Perhatikan dan pahami diagram class tersebut.</li>
+<li>Kemudian buka aplikasi teks editor.</li>
+<li><p>
+Buatlah class <b>Penumpang</b> dalam package <b>percobaan2</b> (sesuaikan dengan nama
+package anda.)
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan2</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Penumpang</span> {
+   <span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">ktp</span>;
+   <span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>;
+}
+</pre>
+</div></li>
+<li><p>
+Tambahkan constructor ke dalam class <b>Penumpang</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> Penumpang(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">ktp</span>, <span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>) {
+   <span style="color: #a020f0;">this</span>.ktp = ktp;
+   <span style="color: #a020f0;">this</span>.nama = nama;
+}
+...
+</pre>
+</div></li>
+<li>Untuk setiap atribut, buatlah masing-masing <i>setter</i> dan <i>getter</i>.</li>
+<li><p>
+Implementasikan method <b>info()</b> ke dalam class <b>Penumpang</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> String info() {
+   <span style="color: #228b22;">String</span> <span style="color: #a0522d;">info</span> = <span style="color: #8b2252;">""</span>;
+   info += <span style="color: #8b2252;">"Ktp: "</span> + ktp + <span style="color: #8b2252;">"\n"</span>;
+   info += <span style="color: #8b2252;">"Nama: "</span> + nama + <span style="color: #8b2252;">"\n"</span>;
+   <span style="color: #a020f0;">return</span> info;
+}
+...
+</pre>
+</div></li>
+<li><p>
+Buat file class <b>Kursi</b> dalam package yang sama
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan2</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Kursi</span> {
+ <span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">nomer</span>;
+ <span style="color: #a020f0;">private</span> <span style="color: #228b22;">Penumpang</span> <span style="color: #a0522d;">penumpang</span>;
+
+}
+</pre>
+</div></li>
+
+<li><p>
+Tambahkan constructor pada class <b>Kursi</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> Kursi(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">nomer</span>) {
+   <span style="color: #a020f0;">this</span>.nomer = nomer;
+}
+...
+</pre>
+</div></li>
+<li>Tambahkan masing-masing atribut yang ada dalam class <b>Kursi</b></li>
+<li><p>
+Implementasikan method <b>info()</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> String info() {
+  <span style="color: #228b22;">String</span> <span style="color: #a0522d;">info</span> = <span style="color: #8b2252;">""</span>;
+  info += <span style="color: #8b2252;">"Nomer: "</span> + nomer + <span style="color: #8b2252;">"\n"</span>;
+  <span style="color: #a020f0;">if</span> (<span style="color: #a020f0;">this</span>.penumpang != <span style="color: #008b8b;">null</span>) {
+    info += <span style="color: #8b2252;">"Penumpang: "</span> + penumpang.info() + <span style="color: #8b2252;">"\n"</span>;
+  }
+  <span style="color: #a020f0;">return</span> info;
+}
+...
+</pre>
+</div></li>
+
+<li><p>
+Buat class <b>Gerbong</b> berikut atribut-atribut kode serta kursi yang bertipe
+data <i>Array</i>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan2</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Gerbong</span> {
+<span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">kode</span>;
+<span style="color: #a020f0;">private</span> <span style="color: #228b22;">Kursi</span> <span style="color: #a0522d;">arrayKursi</span>[];
+
+}
+</pre>
+</div></li>
+
+<li><p>
+Tambahkan <i>constructor</i> ke dalam class <b>Gerbong</b>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #0000ff;">Gerbong</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">kode</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">jumlah</span>) {
+<span style="color: #a020f0;">this</span>.kode = kode;
+<span style="color: #a020f0;">this</span>.arrayKursi = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Kursi</span>[jumlah];
+<span style="color: #b22222;">// </span><span style="color: #b22222;">Digunakan untuk inisialisasi kursi yang ada dalam array</span>
+<span style="color: #a020f0;">this</span>.initKursi();
+}
+</pre>
+</div></li>
+
+<li><p>
+Inisialisasi kursi dengan menggunakan method <b>initKursi()</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">private</span> <span style="color: #228b22;">void</span> initKursi() {
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; arrayKursi.<span style="color: #228b22;">length</span>; i++) {
+    <span style="color: #a020f0;">this</span>.arrayKursi[i] = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Kursi</span>(String.valueOf(i + 1));
+  }
+}
+...
+</pre>
+</div></li>
+
+<li><p>
+Tambahkan <i>setter</i> dan <i>getter</i> untuk kelas Gerbong.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> String getKode() {
+  <span style="color: #a020f0;">return</span> kode;
+}
+
+<span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">setKode</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">kode</span>) {
+  <span style="color: #a020f0;">this</span>.kode = kode;
+}
+
+<span style="color: #a020f0;">public</span> <span style="color: #228b22;">Kursi</span>[] <span style="color: #0000ff;">getArraykursi</span>() {
+  <span style="color: #a020f0;">return</span> arrayKursi;
+}
+...
+</pre>
+</div></li>
+
+<li><p>
+Implementasikan method <b>info()</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> String info() {
+  <span style="color: #228b22;">String</span> <span style="color: #a0522d;">info</span> = <span style="color: #8b2252;">""</span>;
+  info += <span style="color: #8b2252;">"Kode: "</span> + kode + <span style="color: #8b2252;">"\n"</span>;
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">Kursi</span> <span style="color: #a0522d;">kursi</span> : arrayKursi) {
+    info += kursi.info();
+  }
+  <span style="color: #a020f0;">return</span> info;
+}
+...
+</pre>
+</div></li>
+
+<li><p>
+Implementasikan method untuk memasukkan penumpang sesuai dengan nomer kursi.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> setPenumpang(<span style="color: #228b22;">Penumpang</span> <span style="color: #a0522d;">penumpang</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">nomer</span>) {
+  <span style="color: #a020f0;">this</span>.arrayKursi[nomer - 1] .setPenumpang(penumpang);
+}
+...
+</pre>
+</div></li>
+
+<li><p>
+Buat class dengan nama <b>Percobaan2</b>, tambahkan method <b>main</b>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">percobaan2</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">Percobaan2</span> {
+  <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">args</span>[]) {
+    <span style="color: #228b22;">Penumpang</span> <span style="color: #a0522d;">p</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Penumpang</span>(<span style="color: #8b2252;">"12345"</span>, <span style="color: #8b2252;">"Mr. Krab"</span>);
+    <span style="color: #228b22;">Gerbong</span> <span style="color: #a0522d;">gerbong</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Gerbong</span>(<span style="color: #8b2252;">"A"</span>, 10);
+
+    gerbong.setPenumpang(p, 1);
+
+    System.out.println(gerbong.info());
+  }
+}
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbf285cb" class="outline-4">
+<h4 id="orgbf285cb"><span class="section-number-4">3.2.2</span> Pertanyaan</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ol class="org-ol">
+<li>Pada main program dalam class <b>Percobaan2</b>, berapakah jumlah kursi dalam
+Gerbong A?</li>
+<li><p>
+Perhatikan potongan kode pada method <b>info()</b> dalam <i>class</i> <b>Kursi</b>. Apa
+maksud kode tersebut?
+</p>
+<div class="org-src-container">
+<pre class="src src-java">...
+<span style="color: #a020f0;">if</span> (<span style="color: #a020f0;">this</span>.penumpang != <span style="color: #008b8b;">null</span>) {
+   info += <span style="color: #8b2252;">"Penumpang: "</span> + penumpang.info() + <span style="color: #8b2252;">"\n"</span>;
+}
+...
+</pre>
+</div></li>
+
+<li>Mengapa pada method <b>setPenumpang()</b> dalam <i>class</i> <b>Gerbong</b>, nilai nomer
+dikurangi dengan angka 1?</li>
+
+<li>Instansiasi obyek baru <b>budi</b> dengan tipe <b>Penumpang</b>, kemudian masukkan obyek baru tersebut
+pada gerbong dengan <b>gerbong.setPenumpang(budi, 1)</b>. Apakah yang terjadi?</li>
+
+<li>Modifikasi program sehingga, tidak diperkenankan untuk menduduki kursi yang
+sudah ada penumpang lain!</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga4d7cb2" class="outline-2">
+<h2 id="orga4d7cb2"><span class="section-number-2">4</span> Latihan</h2>
+<div class="outline-text-2" id="text-4">
+
+<div class="figure">
+<p><img src="images/08/plantuml-latihan.png" alt="plantuml-latihan.png">
+</p>
+</div>
+
+<div class="notice notice-info">
+<p>
+Untuk menggunakan class dalam package yang berbeda, dapat digunakan keyword
+import. Contoh: <b>import dhanifudin.relasikelas.percobaan1.Pegawai</b>;
+</p>
+</div>
+
+<ol class="org-ol">
+<li><p>
+Buatlah class baru <b>KeretaApi</b> pada package <b>latihan</b>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">package</span> dhanifudin.relasikelas.<span style="color: #008b8b;">latihan</span>;
+
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">KeretaApi</span> {
+  <span style="color: #b22222;">// </span><span style="color: #b22222;">Konstanta dalam java</span>
+  <span style="color: #a020f0;">private</span> <span style="color: #a020f0;">static</span> <span style="color: #a020f0;">final</span> <span style="color: #228b22;">int</span> <span style="color: #a0522d;">JUMLAH_KURSI</span> = 10;
+
+  <span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>;
+  <span style="color: #a020f0;">private</span> <span style="color: #228b22;">String</span> <span style="color: #a0522d;">kelas</span>;
+  <span style="color: #a020f0;">private</span> <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">masinis</span>;
+  <span style="color: #a020f0;">private</span> <span style="color: #228b22;">Gerbong</span> <span style="color: #a0522d;">gerbongArray</span>[];
+
+}
+</pre>
+</div></li>
+
+<li><p>
+Tambahkan constructor <b>KeretaApi</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #0000ff;">KeretaApi</span>(<span style="color: #228b22;">String</span> <span style="color: #a0522d;">nama</span>, <span style="color: #228b22;">String</span> <span style="color: #a0522d;">kelas</span>, <span style="color: #228b22;">Pegawai</span> <span style="color: #a0522d;">masinis</span>, <span style="color: #228b22;">int</span> <span style="color: #a0522d;">jmlGerbong</span>) {
+  <span style="color: #a020f0;">this</span>.nama = nama;
+  <span style="color: #a020f0;">this</span>.kelas = kelas;
+  <span style="color: #a020f0;">this</span>.masinis = masinis;
+  <span style="color: #a020f0;">this</span>.gerbongArray = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Gerbong</span>[jmlGerbong];
+  <span style="color: #a020f0;">this</span>.initGerbong();
+}
+</pre>
+</div></li>
+
+<li><p>
+Implementasikan method <b>initGerbong()</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">private</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">initGerbong</span>() {
+  <span style="color: #a020f0;">for</span> (<span style="color: #228b22;">int</span> <span style="color: #a0522d;">i</span> = 0; i &lt; gerbongArray.<span style="color: #228b22;">length</span>; i++) {
+    gerbongArray[i] =
+      <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Gerbong</span>(String.valueOf((<span style="color: #228b22;">char</span>)((<span style="color: #228b22;">int</span>) <span style="color: #8b2252;">'A'</span> + i)), <span style="color: #008b8b;">KeretaApi</span>.JUMLAH_KURSI);
+  }
+}
+</pre>
+</div></li>
+
+<li>Tambahkan method sehingga penumpang dapat memesan KeretaApi sesuai dengan
+gerbong dan nomer yang diinginkan!</li>
+
+<li>Tampilkan informasi mengenai detail KeretaApi meliputi nama Penumpang dalam
+setiap gerbong, berikut jumlah kursi yang masih tersedia!</li>
+</ol>
+</div>
+</div>
+</div>
+</body>
+</html>
