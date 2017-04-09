@@ -35,3 +35,5 @@
 - [[./06-jobsheet.html][Enkapsulasi]]
 * Jobsheet 07
 - [[./07-jobsheet.html][Relasi Kelas]]
+* Jobsheet 08
+- [[./08-jobsheet.html][Relasi Kelas]]
