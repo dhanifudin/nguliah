@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PBO :: Pertemuan 10</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../assets/css/screen-16x10.css">
+  <link rel="stylesheet" href="../../assets/css/default.css">
+  <link rel="stylesheet" href="../../assets/css/slide.css">
+</head>
+
+<body class="shower list">
+  <header class="caption">
+    <h1>Pemrograman Berorientasi Obyek</h1>
+    <p>Dian Hanifudin Subhi</p>
+  </header>
+
+  <section class="slide" id="cover">
+    <h2>Overriding &amp; Overloading</h2>
+    <img class="cover" src="images/pbo.jpg" alt="PBO" />
+    <style>
+      #cover h2 {
+        margin: 30px 0 0;
+        color:#fff;
+        font-size: 4em;
+      }
+
+      #cover img {
+        filter: grayscale();
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="images/11/animals.jpg" alt="Hewan" />
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="images/11/cow.jpg" alt="Sapi" />
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="images/11/monkey.jpg" alt="Monyet" />
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="images/11/macan.jpg" alt="Macan" />
+  </section>
+
+  <section class="slide">
+    <img class="center" src="images/how.gif" alt="How" />
+  </section>
+
+  <section class="slide">
+    <h2 class="shout shrink">Override</h2>
+  </section>
+
+  <section class="slide" id="sintaks">
+    <h2>Sintaks Override</h2>
+<pre style="font-size: 18px;"><code class="java">
+public class Macan {
+  ...
+  @Override
+  public void makan() {
+    // do something
+  }
+  ...
+}
+</code></pre>
+    <p>Annotation <b>@Override</b> tidak wajib dituliskan.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Annotation @Override</h2>
+    <div class="left-5">
+      <ul>
+        <li>Compiler checking</li>
+        <li>Easier to understand</li>
+      </ul>
+    </div>
+    <div class="right-5">
+      <img src="images/ok.gif" alt="OK">
+    </div>
+  </section>
+
+  <section class="slide">
+  <div class="left-4">
+    <img src="images/linus.jpg" alt="Linus">
+  </div>
+  <div class="right-6">
+    <blockquote>Talk is cheap, show me the code! - Linus Torvalds</blockquote>
+  </div>
+  </section>
+
+  <section class="slide">
+<pre><code class="java">
+public class hitung {
+  public int tambahDuaBilanganInteger(int a, int b) {}
+  public float tambahDuaBilanganFloat(float a, float b) {}
+  public int tambahTigaInteger(int a, int b, int c) {}
+  public float tambahTigaFloat(float a, float b, float c) {}
+  public int tambahArray(int data[]) {}
+}
+</code></pre>
+  </section>
+
+  <section class="slide">
+    <img class="center" src="images/patrick.gif" alt="Uhh" />
+  </section>
+
+  <section class="slide">
+    <h2 class="shout shrink">Overload</h2>
+  </section>
+
+  <section class="slide">
+<pre><code class="java">
+public class hitung {
+  public int tambah(int a, int b) {}
+  public float tambah(float a, float b) {}
+  public int tambah(int a, int b, int c) {}
+  public float tambah(float a, float b, float c) {}
+  public int tambah(int data[]) {}
+}
+</code></pre>
+  </section>
+
+  <section class="slide">
+    <h2>Method Overload</h2>
+    <ul>
+      <li>Nama method harus sama.</li>
+      <li>Daftar parameter (argumen) harus berbeda (jumlah atau tipe data)</li>
+      <li>Return type boleh sama, ataupun berbeda.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Parameter pada Overloading</h2>
+    <ul>
+      <li>Perbedaan daftar parameter bukan hanya terjadi pada perbedaan
+        parameter, tetapi juga urutan dari tipe data parameter.</li>
+      <li>Daftar parameter tidak terkait dengan penamaan variabel yang ada dalam
+      parameter</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Trivia</h2>
+<pre><code class="java">
+public void fungsi(int x, String s) {}
+</code></pre>
+<hr />
+<pre><code class="java">
+public void fungsi(String s, int x) {}
+</code></pre>
+  </section>
+
+  <section class="slide">
+    <h2>Trivia</h2>
+<pre><code class="java">
+public void fungsi(int x) {}
+</code></pre>
+<hr />
+<pre><code class="java">
+public void fungsi(int y) {}
+</code></pre>
+  </section>
+
+  <section class="slide">
+    <h2>Constructor Overloading</h2>
+    <ul>
+      <li>Seperti halnya pada method, dapat dilakukan <b>overloading</b> pada
+        <b>constructor</b></li>
+      <li>Dapat digunakan keyword <b>this</b> untuk memanggil <b>constructor</b>
+      yang lain</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+<pre style="font-size: 16px; line-height: 1.5;"><code class="java">
+public class Mahasiswa {
+  private String nim;
+  private String nama;
+  private String gender;
+
+  public Mahasiswa(String nim, String nama) {
+    this(nim, nama, null);
+  }
+  public Mahasiswa(String nim, String nama, String gender) {
+    this.nim = nim;
+    this.nama = nama;
+    this.gender = gender;
+  }
+}
+</code></pre>
+  </section>
+
+  <section class="slide">
+    <h2><a href="http://github.com/dhanifudin">@dhanifudin</a></h2>
+    <div class="left-4">
+      <h2>Pertanyaan?</h2>
+    </div>
+    <div class="right-6">
+      <blockquote>
+        Malu bertanya, sesat di jalan. Banyak bertanya memalukan.
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="progress"></div>
+  <script src="../../assets/js/shower.min.js"></script>
+  <script src="../../assets/js/highlight.pack.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 {
-  "name": "gruvslide",
+  "name": "nguliah",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -15,5 +15,9 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-uglify": "^2.0.1",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "highlightjs": "^9.10.0",
+    "shower": "^2.1.9"
   }
 }

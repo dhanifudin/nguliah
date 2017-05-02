@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PBO :: Pertemuan 10</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../assets/shower-ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="../../assets/highlightjs/styles/default.css">
+  <link rel="stylesheet" href="../../assets/css/slide.css">
+</head>
+
+<body class="shower list">
+  <header class="caption">
+    <h1>Pemrograman Berorientasi Obyek</h1>
+    <p>Dian Hanifudin Subhi</p>
+  </header>
+
+  <section class="slide" id="cover">
+    <h2>Inheritance</h2>
+    <img class="cover" src="images/pbo.jpg" alt="PBO" />
+    <style>
+      #cover h2 {
+        margin: 30px 0 0;
+        color:#fff;
+        font-size: 4em;
+      }
+
+      #cover img {
+        filter: grayscale();
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="why">
+    <h2>Why?</h2>
+    <img class="center" src="images/why.gif" alt="Why">
+    <style>
+      #why h2 {
+        text-align: center;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+<pre><code class="nohighlight">
+
+Q: What's the object-oriented way to become wealthy?
+A: Inheritance
+
+
+</code></pre>
+  </section>
+
+  <section class="slide">
+    <h2>Topik Bahasan</h2>
+    <ul>
+      <li>Pengertian Inheritance</li>
+      <li>Access Control</li>
+      <li>Deklarasi Inheritance</li>
+      <li>Single Inheritance</li>
+      <li>Multilevel Inheritance</li>
+      <li>Super Keyword</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Pengertian</h2>
+    <ul>
+      <li>Inheritance (Pewarisan) merupakan salah satu dari konsep dasar OOP.</li>
+      <li>Konsep Inheritance ini mengadopsi dunia nyata dimana suatu
+        entitas/obyek dapat mempunyai entitas/obyek turunan.</li>
+      <li>Dengan konsep inheritance, sebuah class dapat mempunyai class turunan.</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="pengertian">
+    <h2>Pengertian</h2>
+    <ul>
+      <li>Suatu class yang mempunyai class turunan dinamakan <b>parent class</b>
+      atau <b>base class</b> atau <b>super class</b>.</li>
+      <li>Sedangkan class turunan itu sendiri seringkali disebut <b>subclass</b>
+        atau <b>child class</b>.</li>
+      <li>Suatu subclass dapat mewarisi apa-apa yang dipunyai oleh parent
+        class.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Pengertian</h2>
+    <ul>
+      <li>Subclass dapat mewarisi apa-apa yang dipunyai oleh parent class, maka
+      member dari suatu subclass terdiri dari apa-apa yang dipunyai dan juga
+      yang diwarisi dari class parent.</li>
+      <li>Kesimpulannya, boleh dikatakan bahwa suatu subclass adalah tidak lain
+      hanya memperluas (<b>extends</b>) parent class.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Contoh Inheritance</h2>
+    <div class="left-4">
+      <img src="images/10/inheritance.png" alt="Inheritance">
+    </div>
+    <div class="right-6">
+      <ul>
+        <li>Super Class: Pegawai</li>
+        <li>Subclass: Programmer dan Manager</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Istilah Lain Inheritance</h2>
+    <ul>
+      <li><b>Generalisasi</b>: super class memiliki bentuk atau sifat yang lebih
+      umum daripada subclass.</li>
+    <li>Relasi <b>Is A</b>: <em><b>Subclass is a Super Class</b></em>. Contoh:
+      Programmer is a Pegawai (Programmer adalah Pegawai).</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Modifier Access</h2>
+    <table>
+      <tr>
+        <th scope="col">Modifier</th>
+        <th>Class</th>
+        <th>Package</th>
+        <th>Subclass</th>
+        <th>Other Class</th>
+      </tr>
+      <tr>
+        <th scope="row">private</th>
+        <td>&#10003;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">default</th>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">protected</th>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">public</th>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+        <td>&#10003;</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="slide">
+    <h2>Deklarasi</h2>
+    <ul>
+      <li>Menambahkan kata kunci <b>extends</b> setelah deklarasi nama class,
+        diikuti dengan nama parent (super) class.</li>
+      <li>Kata kunci <b>extends</b> tersebut memberitahu kompiler Java bahwa
+        kita ingin melakukan perluasan class.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Contoh Deklarasi Inheritance</h2>
+<pre><code class="java">
+public class SubClass extends ParentClass {
+...
+}
+
+</code></pre>
+  </section>
+
+  <section class="slide" id="object">
+    <h2>Class <b>Object</b></h2>
+    <div class="left-4">
+      <p>Kode Java</p>
+<pre><code class="java">
+public class A {
+...
+}
+
+</code></pre>
+    </div>
+    <div class="right-6">
+      <p>Hasil Kompilasi</p>
+<pre><code class="java">
+public class A extends Object {
+...
+}
+
+</code></pre>
+    </div>
+    <p>Semua class di dalam Java, merupakan subclass dari super class
+      <b>Object</b></p>
+    <style>
+      #object {
+        padding: 40px 40px 0;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Kapan Inheritance Dibutuhkan</h2>
+    <ul>
+      <li>Pada saat dijumpai suatu class yang dapat diperluas dari class lain.</li>
+      <li>Terdapat beberapa class yang memiliki sifat (atribut dan method) yang
+      sama. Atribut dan method yang sama, dienkapsulasi pada super class.</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="code">
+<pre><code class="java">
+public class Pegawai {
+  private String nama;
+  private double gaji;
+}
+</code></pre>
+    <div class="left-5">
+<pre><code class="java">
+public class Manajer {
+  private String nama;
+  private double gaji;
+  <span class="line">private String departemen;</span>
+}
+</code></pre>
+    </div>
+    <div class="right-5">
+<pre><code class="java">
+public class Programmer {
+  private String nama;
+  private double gaji;
+  <span class="line">private double bonus;</span>
+}
+</code></pre>
+    </div>
+    <style>
+      #code {
+        padding: 40px 40px 0;
+      }
+      #code .line {
+        background-color: #d4d4d4;
+      }
+      #code pre code {
+        font-size: 0.8em;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <ul>
+      <li>Class Manajer mempunyai data member yang identik sama dengan class
+        Pegawai, hanya saja ada tambahan data atribut <b>departemen</b></li>
+      <li>Class Manajer merupakan perluasan dari class Pegawai dengan tambahan
+        data atribut <b>departemen</b>.</li>
+      <li>Konsep inheritance dapat diterapkan pada kasus seperti ini.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+<pre><code>
+public class Pegawai {
+  protected String nama;
+  protected double gaji;
+}
+
+</code></pre>
+  </section>
+
+  <section class="slide">
+<pre><code>
+public class Manajer extends Pegawai {
+  private String departemen;
+}
+
+</code></pre>
+<pre><code>
+public class Programmer extends Pegawai {
+  private double bonus;
+}
+
+</code></pre>
+  </section>
+
+  <section class="slide">
+    <h2>Single Inheritance</h2>
+    <ul>
+      <li>Konsep inheritance yang ada di Java, hanya memperkenankan <b>single
+          inheritance</b>.</li>
+      <li>Single Inheritance hanya memperbolehkan suatu subclass mempunyai satu
+      parent class.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Multilevel Inheritance</h2>
+    <ul>
+      <li>Konsep inheritance yang ada di Java memperkenankan adanya Multilevel
+        Inheritance.</li>
+      <li>Konsep Multilevel Inheritance memperbolehkan suatu subclass mempunyai
+      subclass lagi.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Multilevel Inheritance</h2>
+    <img class="center" src="images/10/multilevel-interitance.png" alt="Multilevel Inheritance">
+  </section>
+
+  <section class="slide">
+    <h2>Inheritance pada Constructor</h2>
+    <ul>
+      <li>Constructor dari parent class tidak dapat diwariskan ke subsclass.</li>
+      <li>Sehingga dibutuhkan pemanggilan constructor parent class dalam
+        constructor subclass.</li>
+      <li>Pemanggilan constructor parent harus dilakukan pada baris pertama dari
+      constructor subclass.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Kata Kunci Super</h2>
+    <ul>
+      <li>Kata kunci <b>super</b> digunakan untuk merujuk pada member dari
+        parent class.</li>
+      <li>Sebagaimana kata kunci <b>this</b> yang dipakai untuk merujuk pada
+        member dari class itu sendiri</li>
+      <li>Format penulisan:</li>
+      <ul>
+        <li>super.namaAtribut : merujuk <b>atribut</b> dari parent class</li>
+        <li>super.namaMethod() : merujuk pada <b>method</b> dari parent class.</li>
+        <li>super() : merujuk <b>constructor</b> parent class.</li>
+      </ul>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2><a href="http://github.com/dhanifudin">@dhanifudin</a></h2>
+    <h2 class="shout shrink">Question?</h2>
+  </section>
+
+  <div class="progress"></div>
+  <script src="../../assets/shower-core/shower.min.js"></script>
+  <script src="../../assets/highlightjs/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+
+</html>
