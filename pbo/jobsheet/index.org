@@ -41,3 +41,5 @@
 - [[./10-jobsheet.html][Inheritance]]
 * Jobsheet 11
 - [[./11-jobsheet.html][Overiding dan Overloading]]
+* Jobsheet 12
+- [[./pdf/12-jobsheet.pdf][Abstract Class dan Interface]]
