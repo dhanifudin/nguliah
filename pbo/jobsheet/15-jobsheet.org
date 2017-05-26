@@ -1,0 +1,599 @@
+#+TITLE: Jobsheet 15
+#+SUBTITLE: Graphical User Interface
+#+AUTHOR: Dian Hanifudin Subhi
+#+EMAIL: dhanifudin@gmail.com
+#+LANGUAGE: id
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-scripts:t html-style:t html5-fancy:nil tex:t
+#+HTML_DOCTYPE: html5
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../assets/css/jobsheet.css"/>
+#+HTML_HEAD_EXTRA:<script src="../../assets/js/jobsheet.js"></script>
+#+INFOJS_OPT:
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5)
+#+LATEX_HEADER:
+
+* Kompetensi
+Setelah menempuh pokok bahasan ini, mahasiswa mampu:
+1. Membuat aplikasi Graphical User Interface sederhana dengan bahasa pemrograman Java
+2. Mengenal komponen GUI seperti Frame, Label, TextField, ComboBox, RadioButton,
+   CheckBox, TextArea, Menu serta Tabel.
+3. Menambahkan event handling pada aplikasi GUI.
+
+* Percobaan
+** Percobaan 1
+*** Langkah Percobaan
+- Bukalah program Netbeans IDE yang sudah terinstall di komputer anda!
+- Buat project baru, kemudian lengkapi dialog wizard sampai selesai.
+- Untuk memudahkan pengorganisasian source code, buatlah package dengan nama
+  =identifier.percobaan1= (gantilah identifier dengan identitas anda, contoh
+  penamaan package: =dhanifudin.percobaan1=).
+- Buat class baru dengan nama =SimpleFrame=
+  #+BEGIN_SRC java
+  package dhanifudin.percobaan1;
+
+  public class SimpleFrame extends javax.swing.JFrame {
+
+  }
+  #+END_SRC
+- Kemudian tambahkan constructor ke dalam class =SimpleFrame=
+  #+BEGIN_SRC java
+  // ....
+
+  public Simpleframe() {
+    super("Simple Frame");
+  }
+
+  // ....
+  #+END_SRC
+
+- Tambahkan method dengan nama =initUI()= dengan akses modifier =private=
+  #+BEGIN_SRC java
+  // ....
+
+  private void initUI() {
+
+  }
+
+  // ....
+  #+END_SRC
+- Pada body method dari =initUI()= tambahkan perintah berikut.
+  #+BEGIN_SRC java
+  private void initUI() {
+    // Ketika icon silang pada window ditekan, maka window akan ditutup
+    setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+    setLayout(new FlowLayout());
+    setSize(400, 400);
+    // Mengatur kemunculan window di tengah layar monitor
+    setLocationRelativeTo(null);
+  }
+  #+END_SRC
+
+  #+HTML: <div class="notice notice-info">
+  Untuk menggunakan class =WindowConstants= dan =FlowLayout= anda perlu mengimport classnya
+  terlebih dahulu yang terdapat dalam package =javax.swing.WindowConstants= dan
+  =java.awt.FlowLayout=. Class =FlowLayout= merupakan salah satu jenis class
+  =LayoutManager= yang bertugas untuk mengatur layout dari komponen GUI.
+  #+HTML: </div>
+
+- Tambahkan main program dalam class tersebut
+  #+BEGIN_SRC java
+  // ....
+  public static void main(String[] args) {
+    SimpleFrame frame = new SimpleFrame();
+    frame.setVisible(true);
+  }
+  // ....
+  #+END_SRC
+- Jalankan program dengan menggunakan opsi =Run File=.
+
+  [[./images/15/1.png]]
+
+- Jika langkah-langkah dilakukan dengan benar, maka akan muncul sebuah frame
+  window.
+
+- Untuk menambahkan tombol pada frame, gunakan class =JButton= kemudian
+  tambahkan ke frame dengan method =add()=.
+
+  #+BEGIN_SRC java
+  private void initUI() {
+    setDefaultcloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    // Deklarasi dan instansiasi helloButton
+    JButton helloButton = new JButton("Hello World!");
+    // Menambahkan tombol helloButton ke dalam frame
+    add(helloButton);
+
+    // ...
+  }
+  #+END_SRC
+
+- Jalankan program sekali lagi dengan opsi =Run File=. Ketika tombol ditekan,
+  tombol masih tidak melakukan aksi tertentu.
+
+- Tambahkan event handling ke tombol, dengan cara membuat class yang
+  mengimplementasikan interface =ActionListener=. Buatlah sebuah class baru,
+  dengan nama =ActionHello=.
+
+  #+BEGIN_SRC java
+  package dhanifudin.percobaan1;
+
+  class ActionHello implements ActionListener {
+
+    private JFrame frame;
+
+    public ActionHello(JFrame frame) {
+      this.frame = frame;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+  }
+  #+END_SRC
+
+  #+HTML: <div class="notice notice-info">
+  Supaya =ActionListener= dan =ActionEvent= dikenali, import
+  =java.awt.event.ActionListener= dan =java.awt.event.ActionEvent= terlebih dahulu.
+  #+HTML: </div>
+
+- Untuk memunculkan pesan dialog, digunakan class =JOptionPane=. Tambahkan baris
+  kode berikut dalam method =actionPerformed(ActionEvent e)=.
+  #+BEGIN_SRC java
+  // ....
+  // Menampilkan pesan dialog
+  JOptionPane.showMessageDialog(frame, "Hello Wolrd!", "Hello", JOptionPane.INFORMATION_MESSAGE);
+  // ....
+  #+END_SRC
+
+  #+HTML: <div class="notice notice-info">
+  Import =JOptionPane= dari =javax.swing.JOptionPane=.
+  #+HTML: </div>
+
+- Tambahkan event ke tombol, dengan menggunakan =addActionListener()=.
+  #+BEGIN_SRC java
+  // ....
+  JButton helloButton = new JButton("Hello World!");
+  // Menambahkan event ke tombol helloButton
+  helloButton.addActionListener(new ActionHello(this));
+  #+END_SRC
+
+- Jalankan program dengan opsi =Run File=, jika langkah-langkah dilakukan dengan
+  benar maka akan muncul sebuah dialog ketika tombol ditekan.
+*** Pertanyaan
+1. Pada percobaan 1, class =SimpleFrame= merupakan class turunan dari?
+2. Untuk menambahkan suatu komponen GUI ke dalam Frame, digunakan perintah apa?
+3. Tambahkan tiga buah tombol, =Pagi=, =Siang= dan =Malam=  yang ketika ditekan,
+   akan muncul dialog ucapan selamat sesuai dengan tombol yang ditekan!
+4. Bagaimana tampilan tombol-tombol pada soal nomer 3? Kenapa hal itu bisa terjadi?
+** Percobaan 2
+*** Langkah Percobaan
+- Pada panel =Projects=, klik kanan pada =Source Packages=.
+- Buatlah file class baru dengan cara klik kanan dan pilih =New= -> =JFrame
+  Form=. Ubah nama class dengan nama =BiodataFrame= dan nama package
+  =identifier.percobaan2= (gunakan identitas anda sebagai identifier nama package).
+- Setelah proses selesai, akan muncul tampilan GUI Editor seperti pada gambar berikut.
+
+  [[./images/15/2.1.png]]
+
+- Perhatikan pada panel sebelah kanan, terdapat panel =Properties= dan
+  =Palette= (susunan panel ini, mungkin saja berbeda pada IDE anda.).
+- Panel =Properties= digunakan untuk mengatur atribut-atribut yang dimiliki oleh
+  suatu komponen GUI. Sedangkan panel =Palette= berisi, komponen-komponen GUI
+  yang bisa anda tambahkan ke dalam GUI Editor.
+
+- Drag beberapa komponen GUI dari panel =Palette= sehingga menghasilkan tampilan
+  seperti gambar berikut.
+
+  [[./images/15/2.2.png]]
+
+- Untuk lebih jelas komponen apa saja yang dibutuhkan, anda dapat menggunakan
+  panel =Navigator=.
+
+  [[./images/15/2.3.png]]
+
+- Ubah tampilan informasi teks pada GUI Editor, sehingga menghasilkan tampilan
+  pada gambar berikut (gunakan klik kanan pada komponen yang diinginkan, dan
+  pilih opsi =Edit Text=).
+
+  [[./images/15/2.4.png]]
+
+- Khusus untuk komponen JComboBox pada jurusan, perlu diatur model yang
+  ditampilkan. Gunakan panel =Properties= kemudian atur nilainya sehingga
+  menjadi seperti pada gambar berikut. Atur nilai atribut =selectedIndex=
+  menjadi =-1= sehingga tidak ada nilai yang dipilih.
+
+  [[./images/15/2.5.png]]
+
+- Sedangkan untuk komponen JRadioButton, atur atribut =buttonGroup= menjadi
+  =buttonGroup1=. Kemudian klik kanan pada =jRadioButton1= pilih opsi =Customize
+  Code= dan tambahkan kode berikut pada bagian paling bawah.
+
+  #+BEGIN_SRC java
+  jRadioButton1.setActionCommand("Laki-laki");
+  #+END_SRC
+
+- Lakukan hal yang sama untuk =jRadioButton2=, atur nilainya menjadi =Perempuan=.
+
+- Untuk memudahkan penambahan logika pemrograman, ubah variabel-variabel
+  komponen mengikuti tabel berikut.
+
+| Variabel Lama | Variabel Baru        |
+|---------------+----------------------|
+| jTextField1   | nimText              |
+| jTextField2   | namaText             |
+| jComboBox1    | jurusanComboBox      |
+| jRadioButton1 | lakiRadioButton      |
+| jRadioButton2 | perempuanRadioButton |
+| jCheckBox1    | bacaCheckBox         |
+| jCheckBox2    | makanCheckBox        |
+| jCheckBox3    | tidurCheckBox        |
+| jTextArea1    | alamatText           |
+| buttonGroup1  | genderGroup          |
+| button1       | okButton             |
+
+  #+HTML: <div class="notice notice-info">
+  Anda dapat menggunakan mode =Preview= untuk melihat hasil tampilan, tanpa
+  perlu menjalankan program. Klik tombol icon yang seperti mata.
+  #+HTML: </div>
+
+- Pada saat ini, tombol =OK= masih belum mempunyai aksi tertentu. Anda dapat
+  menambahkan aksi dengan cara klik kanan pada tombol, pilih =Events= ->
+  =Action= -> =actionPerformed= (atau anda dapat melakukan klik ganda).
+
+- Kemudian tambahkan instruksi-intruksi berikut.
+
+#+BEGIN_SRC java
+  StringBuilder sb = new StringBuilder();
+  sb.append("Nim: ").append(nimText.getText()).append("\n");
+  sb.append("Nama: ").append(namaText.getText()).append("\n");
+  // Mengambil jurusan yang dipilih
+  Object jurusanItem = jurusanComboBox.getSelectedItem();
+  sb.append("Jurusan: ").append(jurusanItem != null ? jurusanItem : "-").append("\n");
+  ButtonModel genderModel = genderGroup.getSelection();
+  // Menampilkan RadioButton yang dipilih
+  sb.append("Gender: ").append(genderModel != null ? genderModel.getActionCommand() : "-").append("\n");
+  sb.append("Hobi: ");
+  if (bacaCheckBox.isSelected())
+    sb.append(bacaCheckBox.getText()).append("\n");
+  if (makanCheckBox.isSelected())
+    sb.append(makanCheckBox.getText()).append("\n");
+  if (tidurCheckBox.isSelected())
+    sb.append(tidurCheckBox.getText()).append("\n");
+  sb.append("\nAlamat: ").append(alamatText.getText()).append("\n");
+  JOptionPane.showMessageDialog(this, sb, "Biodata", JOptionPane.INFORMATION_MESSAGE);
+#+END_SRC
+
+  #+HTML: <div class="notice notice-info">
+  Class =StringBuilder= digunakan untuk proses penggabungan. Alternatifnya, anda
+  dapat menggunakan operasi penggabungan String dengan menggunakan operator =+=.
+  #+HTML: </div>
+
+- Jalankan program, dengan mengunakan opsi =Run File=.
+
+- Jika tidak ada permasalahan, maka akan tampil sebuah window seperti pada
+  gambar berikut.
+
+[[./images/15/2.6.png]]
+
+- Dan jika tombol =OK= ditekan, akan muncul sebuah dialog seperti berikut.
+
+[[./images/15/2.7.png]]
+
+- Untuk menambahkan menu ke dalam GUI, masuk ke GUI Editor. Drag =Menu Bar= ke
+  dalam GUI Editor. Pada menu tersebut, klik kanan kemudian pilih =Add From
+  Palette= -> =Menu Item=.
+
+- Ubah informasi teks menjadi =Keluar= dan nama variabel menjadi =keluarMenu=.
+
+- Untuk menambahkan aksi, klik ganda pada =keluarMenu=.
+
+- Kemudian tambahkan baris kode berikut.
+
+  #+BEGIN_SRC java
+  // ...
+  Object options[] = { "Ya", "Tidak" };
+  int result = JOptionPane.showOptionDialog(
+      this, "Apakah anda ingin keluar?", "Konfirmasi",
+      JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+      null, options, options[1]);
+  if (result == JOptionPane.YES_OPTION) {
+    System.exit(0);
+  }
+  // ...
+  #+END_SRC
+*** Pertanyaan
+1. Apa maksud dari kode berikut ~sb.append("Jurusan: ").append(jurusanItem != null ? jurusanItem : "-").append("\n");~ ? Jelaskan!
+2. Mengapa pada bagian logika checkbox, digunakan multiple if?
+3. Modifikasi program untuk melakukan pemeriksaan pada nilai Nim, Nama, Jurusan
+   serta Gender harus diisi, jika belum diisi tampilkan pesan peringatan untuk
+   masing-masing nilai! (Gunakan method =equals()= untuk melakukan pembandingan).
+4. Apa fungsi logika =if= pada aksi =keluarMenu=?
+** Percobaan 3
+*** Langkah Percobaan
+- Tambahkan package =percobaan3= pada projects.
+- Buatlah class baru dengan nama =Biodata=.
+- Tambahkan atribut-atribut pada class =Biodata= mengikuti tabel berikut.
+
+| Nama Atribut | Tipe Data | Nama Atribut | Tipe Data |
+|--------------+-----------+--------------+-----------|
+| nim          | String    | baca         | boolean   |
+| nama         | String    | makan        | boolean   |
+| jurusan      | String    | tidur        | boolean   |
+| gender       | String    | alamat       | String    |
+
+- Tambahkan default constructor pada class tersebut.
+
+- Gunakan fitur dari Netbeans untuk me-/generate/ =constructor= serta =getter=
+  dan =setter= (klik kanan =Insert Code=).
+
+- Buatlah class baru JFrame Form dengan nama =OuputFrame=. Kemudian ubah nilai
+  =defaultCloseOperation= menjadi =DISPOSE=.
+
+- Tambahkan =JTextArea= ke dalam GUI Editor. Atur ukuran =JTextArea= sehingga,
+  ukurannya sama dengan =JFrame=.
+
+- Ubah nama variabel =jTextArea1= menjadi =outputText=.
+
+- Tambahkan atribut =biodata= dengan tipe data =Biodata= ke dalam class =OutputFrame=.
+
+  #+BEGIN_SRC java
+  // ...
+  private Biodata biodata;
+  // ...
+  #+END_SRC
+
+- Tambahkan juga method =setBiodata(Biodata biodata)= ke dalam class =OutputFrame=.
+
+  #+BEGIN_SRC java
+  // ...
+  public void setBiodata(Biodata biodata) {
+    this.biodata = biodata;
+    outputText.setText(biodata.toString());
+  }
+  #+END_SRC
+
+- Copy file =BiodataFrame= pada package =percobaan2=. Pada panel =Projects= klik
+  kanan, pilih opsi =Copy= kemudian klik kanan pada =percobaan3= pilih opsi
+  =Paste= -> =Refactor Copy=.
+
+- Tambahkan atribut =outputFrame= dengan tipe data =OutputFrame= dalam class =BiodataFrame=.
+
+  #+BEGIN_SRC java
+  // ...
+  private OutputFrame outputFrame;
+  // ...
+  #+END_SRC
+
+- Pada body dari constructor =BiodataFrame=, instansiasi =outputFrame=.
+  #+BEGIN_SRC java
+  //...
+  public BiodataFrame() {
+    outputFrame = new OutputFrame();
+    initComponents();
+  }
+  //...
+  #+END_SRC
+
+- Modifikasi aksi pada tombol =okButton= dalam class =BiodataFrame= menjadi kode berikut.
+  #+BEGIN_SRC java
+  // ...
+  Biodata biodata = new Biodata();
+  biodata.setNim(nimText.getText());
+  biodata.setNama(namaText.getText());
+  Object jurusanItem = jurusanComboBox.getSelectedItem();
+  biodata.setJurusan((jurusanItem != null) ? jurusanItem.toString() : null);
+  ButtonModel genderModel = genderGroup.getSelection();
+  biodata.setGender((genderModel != null) ? genderModel.getActionCommand() : null);
+  biodata.setBaca(bacaCheckBox.isSelected());
+  biodata.setMakan(makanCheckBox.isSelected());
+  biodata.setTidur(tidurCheckBox.isSelected());
+  outputFrame.setBiodata(biodata);
+  outputFrame.setVisible(true);
+  // ...
+  #+END_SRC
+
+- Jalankan =BiodataFrame= dengan menggunakan opsi =Run File=.
+
+- Amati apa hasil dari program tersebut!
+
+*** Pertanyaan
+1. Mengapa pada percobaan 3, mendapatkan hasil seperti itu?
+2. Perbaikilah program, sehingga menampilkan informasi yang tepat! (*Petunjuk*:
+   Override =toString()= pada class =Biodata=).
+
+** Percobaan 4
+*** Langkah Percobaan
+- Tambahkan package =percobaan4=. Pada percobaan ini, akan dibuat window untuk
+  menampilkan biodata para Mahasiswa dalam bentuk tabel.
+- Buatlah class baru dengan nama =BiodataTableModel=. Class ini merupakan
+  turunan dari class =AbstractTableModel=.
+
+  #+BEGIN_SRC java
+  package dhanifudin.percobaan4;
+
+  public class BiodataTableModel extends AbstractModel {
+
+  }
+  #+END_SRC
+
+- Tambahkan atribut array class =Biodata= dalam class =BiodataTableModel= serta =namaKolom=
+
+  #+BEGIN_SRC java
+  // ...
+  private Biodata[] data;
+  private String[] namaKolom;
+  // ...
+  #+END_SRC
+
+- Tambahkan constructor
+
+  #+BEGIN_SRC java
+  // ...
+  public BiodataTableModel(Biodata[] data) {
+    this.data = data;
+    this.namaKolom = new String[]{
+      "Nim",
+      "Nama",
+      "Jurusan",
+      "Gender",
+      "Membaca",
+      "Tidur",
+      "Makan"
+    }
+  }
+  // ...
+  #+END_SRC
+
+- Implementasikan semua abstract method (anda dapat menekan icon lampu yang
+  berada pada /line number/).
+
+- Implementasikan method =getRowCount()=.
+
+  #+BEGIN_SRC java
+  @Override
+  public int getRowCount() {
+    // Mengembalikan jumlah baris, berdasarkan jumlah data
+    return data.length;
+  }
+  #+END_SRC
+
+- Implementasikan method =getColumnCount()=
+
+  #+BEGIN_SRC java
+  @Override
+  public int getColumncount() {
+    // Mengembalikan jumlah kolom dari tabel
+    return 7;
+  }
+  #+END_SRC
+
+- Override method =getColumnName(int column)=
+
+  #+BEGIN_SRC java
+  @Override
+  public String getColumnName(int column) {
+    return namaKolom[column];
+  }
+  #+END_SRC
+
+- Override method =getColumnClass(int columnIndex)=
+
+  #+BEGIN_SRC java
+  @Override
+  public Class<?> getColumnClass(int columnIndex) {
+    if (columnIndex < 4)
+      return String.class;
+    else
+      return Boolean.class;
+  }
+  #+END_SRC
+
+  #+HTML: <div class="notice notice-info">
+  Method =getColumnClass(int columnIndex)= digunakan untuk mengatur tampilan
+  kolom pada tabel. Tipe data =Boolean=, akan direpresentasikan dalam bentuk /checkbox/.
+  #+HTML: </div>
+
+- Implementasi method =getValueAt(int rowIndex, int columnIndex)=.
+  #+BEGIN_SRC java
+  @Override
+  public Object getValueAt(int rowIndex, int columnIndex) {
+    switch (columnIndex) {
+      case 0:
+        return data[rowIndex].getNim();
+      case 1:
+        return data[rowIndex].getNama();
+      case 2:
+        return data[rowIndex].getJurusan();
+      case 3:
+        return data[rowIndex].getGender();
+      case 4:
+        return data[rowIndex].isMembaca();
+      case 5:
+        return data[rowIndex].isMakan();
+      case 6:
+        return data[rowIndex].isTidur();
+      }
+      return null;
+    }
+  #+END_SRC
+
+- Buat class baru =JFrame Form= dengan nama =TabelFrame=.
+
+- Drag =jTable= ke dalam GUI Editor dan ubah nama variabel menjadi =biodataTable=.
+
+- Tambahkan atribut array =Biodata= pada class =TabelFrame=.
+
+  #+BEGIN_SRC java
+  // ...
+  private Biodata[] data;
+  // ...
+  #+END_SRC
+
+- Dalam constructor =TabelFrame()=, atur nilai dari array =Biodata=.
+
+  #+BEGIN_SRC java
+  // ...
+  public TabelFrame() {
+    this.data = new Biodata(4);
+    data[0] = new Biodata("1234567890", "Andi", "Jurusan Informasi", "Laki-laki",
+      true, false, false, "Malang");
+    data[1] = new Biodata("1234567891", "Budi", "Jurusan Elektro", "Laki-laki",
+      true, false, true, "Malang");
+    data[2] = new Biodata("1234567892", "Cici", "Jurusan Akuntansi", "Perempuan",
+      true, false, false, "Malang");
+    data[3] = new Biodata("1234567893", "Dodik", "Jurusan Informasi", "Laki-laki",
+      true, true, true, "Malang");
+
+    initComponents();
+  }
+  // ...
+  #+END_SRC
+
+- Pada komponen =biodataTable=, atur atribut =model=. Tekan tombol kecil di
+  sebelah nilai atribut.
+
+- Akan muncul sebuah dialog. Pada dialog tersebut, pilih opsi combobox
+  =Custom code=.
+
+- Ubah baris kode menjadi =new BiodataTableModel(data)=.
+
+- Jalankan program dengan opsi =Run File=.
+
+  [[./images/15/4.1.png]]
+
+  #+HTML: <div class="notice notice-info">
+  Untuk tampilan tabel sederhana, anda dapat menggunakan =Table model
+  customizer= dialog.
+  #+HTML: </div>
+
+*** Pertanyaan
+1. Apa kegunaan =BiodataTableModel= pada percobaan 4?
+2. Modifikasi program, untuk menambahkan informasi Alamat!
+
+** Latihan
+1. Buatlah tampilan GUI untuk login (gunakan =JPasswordField= untuk password)
+   yang menerima inputan username dan password, terdapat tombol =Login= dan
+   =Reset=. Login diterima jika data yang dimasukkan, username = admin dan
+   password = admin. Tombol =Reset= digunakan untuk menghapus informasi username
+   dan password.
+
+2. Buatlah kalkulator sederhana yang dapat melakukan operasi dua bilangan bulat dengan
+   operator =+=, =-=, =*= dan =/= ! (*Petunjuk*: Gunakan =Integer.parseInt()=
+   untuk mengkonversi inputan String menjadi Integer). Atur =editable= menjadi
+   =false=, sehingga hasil perhitungan tidak bisa diubah.
+
+   [[./images/15/latihan1.png]]
+
+3. Buatlah aplikasi pencatatan skor bola basket. Aplikasi juga dapat menentukan
+   tim mana yang lebih unggul. Jika poin Tim A lebih tinggi, tampilkan "Tim A
+   Unggul", begitu juga sebaliknya. Tetapi jika poin sama, tampilkan "Imbang".
+
+   [[./images/15/latihan2.png]]
