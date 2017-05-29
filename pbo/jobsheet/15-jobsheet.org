@@ -48,6 +48,7 @@ Setelah menempuh pokok bahasan ini, mahasiswa mampu:
 
   public Simpleframe() {
     super("Simple Frame");
+    initUI();
   }
 
   // ....
