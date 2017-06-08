@@ -45,3 +45,9 @@
 - [[./pdf/12-jobsheet.pdf][Abstract Class dan Interface]]
 * Jobsheet 13
 - [[./pdf/13-jobsheet.pdf][Polimorfisme]]
+* Quiz 14
+- [[./06-quiz.html][Quiz 2]]
+* Jobsheet 15
+- [[./15-jobsheet.html][Graphical User Interface]]
+* Jobsheet 16
+- [[./16-jobsheet.html][String dan Collection]]
